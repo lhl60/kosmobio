@@ -1,0 +1,109 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 22, 2015, 3:57:20 PM
+    Author     : lars
+*/
+ 
+
+.alle_vagter_mangler
+{
+ background-color: lightpink !important;   
+}
+.cafe_vagter_mangler
+{
+ background-color: rgb(255, 253, 123)!important;
+}
+.op_vagter_mangler
+{
+ background-color: lightcyan !important;   
+}
+
+/*table.dataTable tbody tr{
+    background-color: whitesmoke;
+}
+
+table.dataTable.hover tbody tr:hover {
+    text-decoration-color: green!important;
+}*/
+.dato_past
+{
+    
+}
+.dato_future
+{
+    
+}
+.dato_present
+{
+ font-weight: bolder;
+}
+
+
+
+
+div.months {
+    display: table;
+    width: 100%;
+    margin-bottom: 1em;
+    border: solid black 1px; 
+
+}
+ 
+div.months span {
+    display: table-cell;
+    border : 1px;
+    color: #3174c7;
+    cursor: pointer;
+    text-align: center;
+    
+  
+}
+ 
+div.months span:hover {
+    text-decoration: underline;
+}
+ 
+div.months span.active {
+    color: black;
+    background-color: gainsboro;
+    font-size:  larger;
+    font-weight: bolder
+
+}
+
+
+.push_button{
+	position:relative;
+	display:block;
+	text-decoration:none;
+	margin:0 auto;
+	border-radius:5px;
+	border:solid 1px #D94E3B;
+	//  background:#cb3b27;
+	text-align:center;
+	padding:10px 10px;
+	
+/*	-webkit-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	transition: all 0.1s;
+	
+	-webkit-box-shadow: 0px 9px 0px #84261a;
+        -moz-box-shadow: 0px 9px 0px #84261a;*/
+//        box-shadow: 0px 9px 0px #84261a;
+}
+
+/*.push_button:active{
+    -webkit-box-shadow: 0px 2px 0px #84261a;
+    -moz-box-shadow: 0px 2px 0px #84261a;
+    box-shadow: 0px 2px 0px #84261a;
+    position:relative;
+    top:7px;
+}*/
+
+.video-box{
+    border: solid 1px;
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <coverage xmlns="http://www.netbeans.org/ns/code-coverage/1" enabled="true"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/lars/html/filmbasen_lokal/php/lib/config.php</file>
+            <file>file:/home/lars/html/filmbasen_lokal/vagtplan.html</file>
+            <file>file:/home/lars/html/filmbasen_lokal/php/table.vagtplan.php</file>
+            <file>file:/home/lars/html/filmbasen_lokal/js/table.vagtplan.js</file>
+            <file>file:/home/lars/html/filmbasen_lokal/info.php</file>
+            <file>file:/home/lars/html/filmbasen_lokal/php/vagtplan-cron.php</file>
+            <file>file:/home/lars/html/filmbasen_lokal/php/db.php</file>
+            <file>file:/home/lars/html/filmbasen_lokal/php/get_shows.php</file>
+            <file>file:/home/lars/html/filmbasen_lokal/css/jquery.dataTables.css</file>
+            <file>file:/home/lars/html/filmbasen_lokal/css/demo.css</file>
+        </group>
+    </open-files>
+</project-private>
