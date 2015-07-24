@@ -13,7 +13,7 @@ class db
 
     public function connect()
     {
-        $local = FALSE;
+        $local = TRUE;
 
         try
         {

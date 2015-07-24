@@ -13,7 +13,7 @@ require_once './event.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$getduty= "http://localhost/kosmobio/webhosting/get_duty.php";
+$getduty= "http://xn--kosmorama-sklskr-5ob14a.dk.php52serv12.webhosting.dk/Cron/get_duty.php";
 
 $x =  file_get_contents($getduty);
 
