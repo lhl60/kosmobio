@@ -19,12 +19,18 @@ and open the template in the editor.
         Start/stop vidoen ved at trykke på playknappen, 
         Hvis billedet er for småt så maximer det til fullscreen på en af knaperne i bunden af videoen      
         
-        <p><h3>overblik:</h3>                   
+        <p><h3>Vagtplan overblik:</h3>                   
         <video class="video-box" src="video/overblik.mp4" controls  width="640" height="390">
             Sorry, your browser doesn't support embedded videos, 
             but don't worry, you can <a href="video/overblik.mp4">download it</a>
             and watch it with your favorite video player!
         </video>
         <p><h3>Søg:</h3>
+             <video class="video-box" src="video/seek.mp4" controls  width="640" height="390">
+            Sorry, your browser doesn't support embedded videos, 
+            but don't worry, you can <a href="video/seek.mp4">download it</a>
+            and watch it with your favorite video player!
+        </video>
+
     </body>
 </html>
