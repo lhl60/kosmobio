@@ -13,7 +13,7 @@ class db
 
     public function connect()
     {
-        $local = TRUE;
+        $local = FALSE;
 
         try
         {
@@ -147,6 +147,8 @@ class db
 
     public function add_duty_event($e)
     {
+        echo "<br><b>add_duty</b>";
+       
         $updatestmt = "UPDATE vagtplan SET " .
                 " Tid='" . $e->hour . ':' . $e->min . "'," .
                 "Cafe1='" .$e->Cafe1 ."',".
@@ -154,6 +156,7 @@ class db
                 "Operator1='" .$e->OP1 ."',".
                 "Operator2='" .$e->OP2 ."'".
                 " Where  Dato = '" . $e->dato . "' and Tid = '$e->hour:$e->min:00';";
+        echo $updatestmt;
         $q = $this->dbh->prepare($updatestmt);
         $ret = $q->execute();
     }
