@@ -25,7 +25,7 @@ and open the template in the editor.
             but don't worry, you can <a href="video/overblik.mp4">download it</a>
             and watch it with your favorite video player!
         </video>
-        <p><h3>Søg:</h3>
+        <h3>Vagtplan Søg:</h3>
              <video class="video-box" src="video/seek.mp4" controls  width="640" height="390">
             Sorry, your browser doesn't support embedded videos, 
             but don't worry, you can <a href="video/seek.mp4">download it</a>
