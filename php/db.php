@@ -14,6 +14,10 @@ class db
     public function connect()
     {
         $local = FALSE;
+        if (file_exists('php/local.php'))
+        {
+        require_once 'local.php';
+        }
 
         try
         {
