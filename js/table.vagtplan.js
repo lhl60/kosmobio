@@ -8,6 +8,7 @@
 var mlist = ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"];
 var _monthsSearch = '';
 var _yearsearch = "";
+var AA_only = false;
 var weekday = ["Søndag", "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag"];
 var reloadtimer = 0;
 var refresh_interval = 15000;
@@ -20,6 +21,18 @@ $.fn.dataTable.ext.search.push(function (settings, searchData) {
     }
 
     if (searchData[13] === _monthsSearch) {
+        return true;
+    }
+
+    return false;
+});
+
+$.fn.dataTable.ext.search.push(function (settings, searchData) {
+    if (!AA_only) {
+        return true;
+    }
+
+    if (searchData[11] === "JA") {
         return true;
     }
 
@@ -416,12 +429,26 @@ function start_page_reloadtimer()
             VPTable.draw();
         });
 
+        $("#AA_only").change(function(){
+            AA_only = !AA_only;
+            VPTable.draw();
+            if (AA_only)
+            {
+                $("#AA_only").addClass('active');
+            }
+            else
+            {
+                $("#AA_only").removeClass('active');
+            }
+        } );
+
         months.on('click', 'span', function () {
             months.find('.active').removeClass('active');
             $(this).addClass('active');
 
             _monthsSearch = $(this).data('letter');
             $("input[type='search']").val("");
+           
             VPTable.search("");
             VPTable.draw();
         });

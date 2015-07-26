@@ -44,6 +44,7 @@ include('php/login/session.php');
              <button onclick="print(true);"> Udskriv</button>
              <input type="button" value="Hjælpe videoer" onclick="window.open('guides.php')" />
             <p>År : <select id="yearselect"></select>
+                &nbsp;&nbsp; Vis kun AA: <input type="checkbox" id="AA_only" />
          
                     
             
