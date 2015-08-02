@@ -11,7 +11,7 @@ var _yearsearch = "";
 var AA_only = false;
 var weekday = ["Søndag", "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag"];
 var reloadtimer = 0;
-var refresh_interval = 15000;
+var refresh_interval = 60000;
 var timedout = false;
 
 
@@ -77,7 +77,7 @@ var inactivityTime = function () {
     function resetTimer() {
         clearTimeout(timeout);
         clearTimeout(t_logout);
-        timeout= setTimeout(stop_page_reload, refresh_interval * 2);
+        timeout= setTimeout(stop_page_reload, refresh_interval * 3);
         t_logout = setTimeout(logout, refresh_interval * 7);
         if (timedout)
         {
