@@ -21,7 +21,7 @@ include('php/login/session.php');
         <li> <a href="vagtplan.php"> Vagtplanen</a> </li>
         <li> Aktiv listen</li>
         <li> Medlems listen</li>
-        <li> Operatør log</li>
+        <li> <a href="op_log.php">Operatør log<a></li>
          <li> Operatør vejledninger</li>
     </ul>
     
