@@ -245,7 +245,7 @@ function start_page_reloadtimer()
             "bSearchable": false,
             "bPaginate": false,
             "autoWidth": true,
-            //  "scrollY":        "600px",
+            "scrollY":        "600px",
             "scrollCollapse": true,
             "aoColumnDefs": [
                 {"sTitle": "Date", "aTargets": [0], "data": "Date", "sType": "date", "iDataSort": 0, "bSortable": false, "visible": false,
