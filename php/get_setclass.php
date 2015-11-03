@@ -8,7 +8,7 @@
             $this->data[$name] = $value;
         }
 
-        public function __get($param)
+        public function &__get($param)
         {
             if (array_key_exists($param, $this->data))
             {

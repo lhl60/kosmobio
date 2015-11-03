@@ -50,6 +50,15 @@ class Database {
 	 */
 	function __construct( $opts )
 	{
+		$types = array( 'Mysql', 'Oracle', 'Postgres', 'Sqlite', 'Sqlserver' );
+
+		if ( ! in_array( $opts['type'], $types ) ) {
+			throw new Exception(
+				"Unknown database driver type. Must be one of ".implode(', ', $types),
+				1
+			);
+		}
+
 		$this->query_driver = "DataTables\\Database\\Driver".$opts['type'].'Query';
 		$this->_db = isset( $opts['pdo'] ) ?
 			$opts['pdo'] :
@@ -175,6 +184,35 @@ class Database {
 
 
 	/**
+	 * Execute an raw SQL query - i.e. give the method your own SQL, rather
+	 * than having the Database classes building it for you.
+	 *
+	 * This method will execute the given SQL immediately. Use the `raw()`
+	 * method if you need the ability to add bound parameters.
+	 *  @param string $sql SQL string to execute (only if _type is 'raw').
+	 *  @return Result
+	 *
+	 *  @example
+	 *    Basic select
+	 *    <code>
+	 *    $result = $db->sql( 'SELECT * FROM myTable;' );
+	 *    </code>
+	 *
+	 *  @example
+	 *    Set the character set of the connection
+	 *    <code>
+	 *    $db->sql("SET character_set_client=utf8");
+	 *    $db->sql("SET character_set_connection=utf8");
+	 *    $db->sql("SET character_set_results=utf8");
+	 *    </code>
+	 */
+	public function raw ( $sql )
+	{
+		return $this->query( 'raw' );
+	}
+
+
+	/**
 	 * Rollback the database state to the start of the transaction.
 	 *
 	 * Use with {@link transaction} and {@link commit}.
@@ -242,6 +280,9 @@ class Database {
 	/**
 	 * Execute an raw SQL query - i.e. give the method your own SQL, rather
 	 * than having the Database classes building it for you.
+	 *
+	 * This method will execute the given SQL immediately. Use the `raw()`
+	 * method if you need the ability to add bound parameters.
 	 *  @param string $sql SQL string to execute (only if _type is 'raw').
 	 *  @return Result
 	 *

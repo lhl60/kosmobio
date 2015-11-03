@@ -134,10 +134,23 @@ class DriverOracleQuery extends Query {
 	}
 
 
-	// Oracle required table quoting to be done with double quotes
 	protected function _build_table()
 	{
-		return ' "'.implode('", "', $this->_table).'" ';
+		$out = [];
+
+		for ( $i=0, $ien=count($this->_table) ; $i<$ien ; $i++ ) {
+			$t = $this->_table[$i];
+
+			if ( strpos($t, ' as ') ) {
+				$a = explode( ' as ', $t );
+				$out[] = $a[0].' '.$a[1];
+			}
+			else {
+				$out[] = $t;
+			}
+		}
+
+		return ' '.implode(', ', $out).' ';
 	}
 }
 

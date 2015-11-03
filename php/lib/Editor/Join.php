@@ -27,13 +27,9 @@ use
  * obtain joined information from the database.
  *
  * For an overview of how Join tables work, please refer to the 
- * {@link http://editor.datatables.net/manual/php/joins Editor manual} as it is
+ * {@link http://editor.datatables.net/manual/php/ Editor manual} as it is
  * useful to understand how this class represents the links between tables, 
  * before fully getting to grips with it's API.
- *
- * Please note that the {@link Join} class is not available in the trial
- * version of Editor, but is included, with full source, in the licensed
- * download package.
  *
  *  @example
  *    Join the parent table (the one specified in the {@link Editor::table}
@@ -41,11 +37,8 @@ use
  *    allows multiple properties to be found for each row in the parent table.
  *    <code>
  *      Join::inst( 'access', 'array' )
- *          ->join(
- *              array( 'id', 'user_id' ),
- *              array( 'id', 'access_id' ),
- *              'user_access'
- *          )
+ *          ->link( 'users.id', 'user_access.user_id' )
+ *          ->link( 'access.id', 'user_access.access_id' )
  *          ->field(
  *              Field::inst( 'id' )->validator( 'Validate::required' ),
  *              Field::inst( 'name' )
@@ -59,7 +52,7 @@ use
  *    Editor will read from that table.
  *    <code>
  *        Join::inst( 'extra', 'object' )
- *            ->join( 'id', 'user_id' )
+ *            ->link( 'user.id', 'extra.user_id' )
  *            ->field(
  *                Field::inst( 'comments' ),
  *                Field::inst( 'review' )
@@ -121,6 +114,9 @@ class Join extends DataTables\Ext {
 
 	/** @var boolean */
 	private $_whereSet = false;
+
+	/** @var array */
+	private $_links = array();
 
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -207,38 +203,28 @@ class Join extends DataTables\Ext {
 	/**
 	 * Get / set join properties.
 	 *
-	 * Define how the SQL will be performed, on what columns. There are basically
-	 * two types of join that are supported by Editor here, a direct foreign key
-	 * reference in the join table to the parent table's primary key, or a link 
-	 * table that contains just primary keys for the parent and child tables (this
-	 * approach is usually used with a {@link type} of 'array' since you can often
-	 * have multiple links between the two tables, while a direct foreign key
-	 * reference will typically use a type of 'object' (i.e. a single entry).
-	 *  @param string|string[] $parent Parent table's primary key names. If
-	 *    used with a link table (i.e. third parameter to this method is given, then
-	 *    an array should be used, with the first element being the pkey's name in
-	 *    the parent table, and the second element being the key's name in the link
-	 *    table.
-	 *  @param string|string[] $child Child table's primary key names. If
-	 *    used with a link table (i.e. third parameter to this method is given, then
-	 *    an array should be used, with the first element being the pkey's name in
-	 *    the child table, and the second element being the key's name in the link
-	 *    table.
+	 * Define how the SQL will be performed, on what columns. There are
+	 * basically two types of join that are supported by Editor here, a direct
+	 * foreign key reference in the join table to the parent table's primary
+	 * key, or a link table that contains just primary keys for the parent and
+	 * child tables (this approach is usually used with a {@link type} of
+	 * 'array' since you can often have multiple links between the two tables,
+	 * while a direct foreign key reference will typically use a type of
+	 * 'object' (i.e. a single entry).
+	 *
+	 *  @param string|string[] $parent Parent table's primary key names. If used
+	 *    with a link table (i.e. third parameter to this method is given, then
+	 *    an array should be used, with the first element being the pkey's name
+	 *    in the parent table, and the second element being the key's name in
+	 *    the link table.
+	 *  @param string|string[] $child Child table's primary key names. If used
+	 *    with a link table (i.e. third parameter to this method is given, then
+	 *    an array should be used, with the first element being the pkey's name
+	 *    in the child table, and the second element being the key's name in the
+	 *    link table.
 	 *  @param {string} $table Join table name, if using a link table
-	 *
-	 *  @example
-	 *    // Using a link table
-	 *    Join::inst( 'access', 'array' )
-	 *      ->join(
-	 *        array( 'id', 'user_id' ),
-	 *        array( 'id', 'access_id' ),
-	 *        'user_access'
-	 *      )
-	 *
-	 *  @example
-	 *    // Using a direct reference (no link table)
-	 *    Join::inst( 'extra', 'object' )
-	 *      ->join( 'id', 'user_id' )
+	 *  @deprecated 1.5 Please use the {@link link} method rather than this
+	 *      method now.
 	 */
 	public function join ( $parent=null, $child=null, $table=null )
 	{
@@ -249,6 +235,41 @@ class Join extends DataTables\Ext {
 		$this->_join['parent'] = $parent;
 		$this->_join['child'] = $child;
 		$this->_join['table'] = $table;
+		return $this;
+	}
+
+
+	/**
+	 * Create a join link between two tables. The order of the fields does not
+	 * matter, but each field must contain the table name as well as the field
+	 * name.
+	 * 
+	 * This method can be called a maximum of two times for an Mjoin instance:
+	 * 
+	 * * First time, creates a link between the Editor host table and a join
+	 *   table
+	 * * Second time creates the links required for a link table.
+	 * 
+	 * Please refer to the Editor Mjoin documentation for further details:
+	 * https://editor.datatables.net/manual/php
+     *
+	 * @param  string $field1 Table and field name
+	 * @param  string $field2 Table and field name
+	 * @return self Name
+	 */
+	public function link ( $field1, $field2 )
+	{
+		if ( strpos($field1, '.') === false || strpos($field2, '.') === false ) {
+			throw new \Exception("Link fields must contain both the table name and the column name");
+		}
+
+		if ( count( $this->_links ) >= 4 ) {
+			throw new \Exception("Link method cannot be called more than twice for a single instance");
+		}
+
+		$this->_links[] = $field1;
+		$this->_links[] = $field2;
+
 		return $this;
 	}
 
@@ -381,20 +402,23 @@ class Join extends DataTables\Ext {
 
 	/**
 	 * Get data
-	 *  @param Database $db Database reference to use
-	 *  @param array $dteTable Host table from the Editor class, only the first is used
-	 *  @param string $pkey Host table primary key
-	 *  @param string $idPrefix DOM id prefix
+	 *  @param Editor $editor Host Editor instance
 	 *  @param string[] $data Data from the parent table's get and were we need
 	 *    to add out output.
 	 *  @param array $options options array for fields
 	 *  @internal
 	 */
-	public function data( $db, $dteTable, $pkey, $idPrefix, &$data, &$options )
+	public function data( $editor, &$data, &$options )
 	{
 		if ( ! $this->_get ) {
 			return;
 		}
+
+		$this->_prep( $editor );
+		$db       = $editor->db();
+		$dteTable = $editor->table();
+		$pkey     = $editor->pkey();
+		$idPrefix = $editor->idPrefix();
 
 		$dteTable = $dteTable[0];
 		$dteTableAlias = $this->_aliasParentTable === null ? $dteTable : $this->_aliasParentTable;
@@ -434,7 +458,7 @@ class Join extends DataTables\Ext {
 		// Set up the JOIN query
 		$stmt = $db
 			->query( 'select' )
-			->get( $pkeyTable.'.'.$joinField.' as _dte_pkey' )
+			->get( $pkeyTable.'.'.$joinField.' as dteditor_pkey' )
 			->get( $this->_fields('get') )
 			->table( $dteTable .' as '. $dteTableAlias );
 
@@ -479,13 +503,13 @@ class Join extends DataTables\Ext {
 			}
 
 			if ( $this->_type === 'object' ) {
-				$join[ $row['_dte_pkey'] ] = $inner;
+				$join[ $row['dteditor_pkey'] ] = $inner;
 			}
 			else {
-				if ( !isset( $join[ $row['_dte_pkey'] ] ) ) {
-					$join[ $row['_dte_pkey'] ] = array();
+				if ( !isset( $join[ $row['dteditor_pkey'] ] ) ) {
+					$join[ $row['dteditor_pkey'] ] = array();
 				}
-				$join[ $row['_dte_pkey'] ][] = $inner;
+				$join[ $row['dteditor_pkey'] ][] = $inner;
 			}
 		}
 
@@ -532,16 +556,25 @@ class Join extends DataTables\Ext {
 
 	/**
 	 * Create a row.
-	 *  @param Database $db Database reference to use
+	 *  @param Editor $editor Host Editor instance
 	 *  @param int $parentId Parent row's primary key value
 	 *  @param string[] $data Data to be set for the join
 	 *  @internal
 	 */
-	public function create ( $db, $parentId, $data )
+	public function create ( $editor, $parentId, $data )
 	{
-		if ( ! $this->_set || ! isset($data[$this->_name]) ) {
+		// If not settable, or the many count for the join was not submitted
+		// there we do nothing
+		if (
+			! $this->_set ||
+			! isset($data[$this->_name]) || 
+			! isset($data[$this->_name.'-many-count'])
+		) {
 			return;
 		}
+
+		$this->_prep( $editor );
+		$db = $editor->db();
 		
 		if ( $this->_type === 'object' ) {
 			$this->_insert( $db, $parentId, $data[$this->_name] );
@@ -556,16 +589,21 @@ class Join extends DataTables\Ext {
 
 	/**
 	 * Update a row.
-	 *  @param Database $db Database reference to use
+	 *  @param Editor $editor Host Editor instance
 	 *  @param int $parentId Parent row's primary key value
 	 *  @param string[] $data Data to be set for the join
 	 *  @internal
 	 */
-	public function update ( $db, $parentId, $data )
+	public function update ( $editor, $parentId, $data )
 	{
-		if ( ! $this->_set ) {
+		// If not settable, or the many count for the join was not submitted
+		// there we do nothing
+		if ( ! $this->_set || ! isset($data[$this->_name.'-many-count']) ) {
 			return;
 		}
+
+		$this->_prep( $editor );
+		$db = $editor->db();
 		
 		if ( $this->_type === 'object' ) {
 			// update or insert
@@ -575,23 +613,26 @@ class Join extends DataTables\Ext {
 			// WARNING - this will remove rows and then readd them. Any
 			// data not in the field list WILL BE LOST
 			// todo - is there a better way of doing this?
-			$this->remove( $db, array($parentId) );
-			$this->create( $db, $parentId, $data );
+			$this->remove( $editor, array($parentId) );
+			$this->create( $editor, $parentId, $data );
 		}
 	}
 
 
 	/**
 	 * Delete rows
-	 *  @param Database $db Database reference to use
+	 *  @param Editor $editor Host Editor instance
 	 *  @param int[] $ids Parent row IDs to delete
 	 *  @internal
 	 */
-	public function remove ( $db, $ids )
+	public function remove ( $editor, $ids )
 	{
 		if ( ! $this->_set ) {
 			return;
 		}
+
+		$this->_prep( $editor );
+		$db = $editor->db();
 		
 		if ( isset($this->_join['table']) ) {
 			$stmt = $db
@@ -628,6 +669,8 @@ class Join extends DataTables\Ext {
 		if ( ! $this->_set || ! isset($data[$this->_name]) ) {
 			return;
 		}
+
+		$this->_prep( $editor );
 
 		$joinData = $data[$this->_name];
 
@@ -713,6 +756,59 @@ class Join extends DataTables\Ext {
 			}
 
 			$stmt->exec(); 
+		}
+	}
+
+
+	/**
+	 * Prepare the instance to be run.
+	 *
+	 * @param  Editor $editor Editor instance
+	 * @private
+	 */
+	private function _prep ( $editor )
+	{
+		$links = $this->_links;
+
+		// Were links used to configure this instance - if so, we need to
+		// back them onto the join array
+		if ( $this->_join['parent'] === null && count($links) ) {
+			$editorTable = $editor->table();
+			$editorTable = $editorTable[0];
+			$joinTable = $this->table();
+
+			if ( count( $links ) === 2 ) {
+				// No link table
+				$f1 = explode( '.', $links[0] );
+				$f2 = explode( '.', $links[1] );
+
+				$this->_join['parent'] = $f1[1];
+				$this->_join['child'] = $f2[1];
+			}
+			else {
+				// Link table
+				$f1 = explode( '.', $links[0] );
+				$f2 = explode( '.', $links[1] );
+				$f3 = explode( '.', $links[2] );
+				$f4 = explode( '.', $links[3] );
+
+				// Discover the name of the link table
+				if ( $f1[0] !== $editorTable && $f1[0] !== $joinTable ) {
+					$this->_join['table'] = $f1[0];
+				}
+				else if ( $f2[0] !== $editorTable && $f2[0] !== $joinTable ) {
+					$this->_join['table'] = $f2[0];
+				}
+				else if ( $f3[0] !== $editorTable && $f3[0] !== $joinTable ) {
+					$this->_join['table'] = $f3[0];
+				}
+				else {
+					$this->_join['table'] = $f2[0];
+				}
+
+				$this->_join['parent'] = array( $f1[1], $f2[1] );
+				$this->_join['child'] = array( $f3[1], $f4[1] );
+			}
 		}
 	}
 

@@ -15,8 +15,14 @@ ini_set('display_errors', '1');
 /*
  * Edit the following with your database connection options
  */
-$local = TRUE;
-if ($local === TRUE) {
+$local=FALSE;
+$xyz = dirname(__FILE__) . "/../local.php";
+if (file_exists($xyz))
+{
+    require_once $xyz;
+}
+if ($local === TRUE)
+{
     $sql_details = array(
         "type" => "Mysql",
         "user" => "mdbuser1034670",
@@ -26,8 +32,8 @@ if ($local === TRUE) {
         "db" => "filmbasen",
         "dsn" => "charset=utf8"
     );
-        
-} else {
+} else
+{
 
 
     $sql_details = array(

@@ -5,7 +5,7 @@
  * PHP libraries for DataTables and DataTables Editor, utilising PHP 5.3+.
  *
  *  @author    SpryMedia
- *  @version   1.4.2
+ *  @version   1.5.1
  *  @copyright 2012 SpryMedia ( http://sprymedia.co.uk )
  *  @license   http://editor.datatables.net/license DataTables Editor
  *  @link      http://editor.datatables.net
@@ -75,6 +75,9 @@ class Editor extends Ext {
 	/** Request type - delete */
 	const ACTION_DELETE = 'delete';
 
+	/** Request type - upload */
+	const ACTION_UPLOAD = 'upload';
+
 
 	/**
 	 * Determine the request type from an HTTP request.
@@ -100,6 +103,9 @@ class Editor extends Ext {
 
 			case 'remove':
 				return self::ACTION_DELETE;
+
+			case 'upload':
+				return self::ACTION_UPLOAD;
 
 			default:
 				throw new \Exception("Unknown Editor action: ".$http['action']);
@@ -138,7 +144,7 @@ class Editor extends Ext {
 	 */
 
 	/** @var string */
-	public $version = '1.4.2';
+	public $version = '1.5.1';
 
 
 
@@ -190,6 +196,9 @@ class Editor extends Ext {
 		"ipOpts" => array()
 	);
 
+	/** @var array */
+	private $_events = array();
+
 
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -224,18 +233,36 @@ class Editor extends Ext {
 
 
 	/**
-	 * Get / set field instances.
+	 * Get / set field instance.
 	 * 
 	 * The list of fields designates which columns in the table that Editor will work
 	 * with (both get and set).
-	 *  @param Field $_... Instances of the {@link Field} class, given as a single 
-	 *    instance of {@link Field}, an array of {@link Field} instances, or multiple
-	 *    {@link Field} instance parameters for the function.
-	 *  @return Field[]|self Array of fields, or self if used as a setter.
+	 *  @param Field|string $_... This parameter effects the return value of the
+	 *      function:
+	 *
+	 *      * `null` - Get an array of all fields assigned to the instance
+	 * 	    * `string` - Get a specific field instance whose 'name' matches the
+	 *           field passed in
+	 *      * {@link Field} - Add a field to the instance's list of fields. This
+	 *           can be as many fields as required (i.e. multiple arguments)
+	 *      * `array` - An array of {@link Field} instances to add to the list
+	 *        of fields.
+	 *  @return Field|Field[]|Editor The selected field, an array of fields, or
+	 *      the Editor instance for chaining, depending on the input parameter.
 	 *  @see {@link Field} for field documentation.
 	 */
 	public function field ( $_=null )
 	{
+		if ( is_string( $_ ) ) {
+			for ( $i=0, $ien=count($this->_fields) ; $i<$ien ; $i++ ) {
+				if ( $this->_fields[$i]->name() === $_ ) {
+					return $this->_fields[$i];
+				}
+			}
+
+			throw 'Unknown field: '.$_;
+		}
+
 		if ( $_ !== null && !is_array($_) ) {
 			$_ = func_get_args();
 		}
@@ -430,6 +457,27 @@ class Editor extends Ext {
 
 
 	/**
+	 * Add an event listener. The `Editor` class will trigger an number of
+	 * events that some action can be taken on.
+	 *
+	 * @param  [type] $name     Event name
+	 * @param  [type] $callback Callback function to execute when the event
+	 *     occurs
+	 * @return self Self for chaining.
+	 */
+	public function on ( $name, $callback )
+	{
+		if ( ! isset( $this->_events[ $name ] ) ) {
+			$this->_events[ $name ] = array();
+		}
+
+		$this->_events[ $name ][] = $callback;
+
+		return $this;
+	}
+
+
+	/**
 	 * Get / set the table name.
 	 * 
 	 * The table name designated which DB table Editor will use as its data
@@ -512,6 +560,7 @@ class Editor extends Ext {
 			else if ( $data['action'] == "remove" ) {
 				/* Remove rows */
 				$this->_remove( $data );
+				$this->_fileClean();
 			}
 			else {
 				/* Create or edit row */
@@ -521,10 +570,18 @@ class Editor extends Ext {
 				// $this->_out['error'] = "";
 
 				if ( $valid ) {
-					$this->_out['row'] = $data['action'] == "create" ?
-						$this->_insert() :
-						$this->_update( $data['id'] );
+					foreach ($data['data'] as $id => $values) {
+						$d = $data['action'] == "create" ?
+							$this->_insert( $values ) :
+							$this->_update( $id, $values );
+
+						if ( $d !== null ) {
+							$this->_out['data'][] = $d;
+						}
+					}
 				}
+
+				$this->_fileClean();
 			}
 
 			if ( $this->_transaction ) {
@@ -543,10 +600,6 @@ class Editor extends Ext {
 		// Tidy up the reply
 		if ( count( $this->_out['fieldErrors'] ) === 0 ) {
 			unset( $this->_out['fieldErrors'] );
-		}
-
-		if ( isset($data['action']) && count( $this->_out['data'] ) === 0 ) {
-			unset( $this->_out['data'] );
 		}
 
 		if ( $this->_out['error'] === '' ) {
@@ -584,21 +637,23 @@ class Editor extends Ext {
 			return true;
 		}
 
-		for ( $i=0 ; $i<count($this->_fields) ; $i++ ) {
-			$field = $this->_fields[$i];
-			$validation = $field->validate( $data['data'], $this );
+		foreach( $data['data'] as $id => $values ) {
+			for ( $i=0 ; $i<count($this->_fields) ; $i++ ) {
+				$field = $this->_fields[$i];
+				$validation = $field->validate( $values, $this );
 
-			if ( $validation !== true ) {
-				$errors[] = array(
-					"name" => $field->name(),
-					"status" => $validation
-				);
+				if ( $validation !== true ) {
+					$errors[] = array(
+						"name" => $field->name(),
+						"status" => $validation
+					);
+				}
 			}
-		}
 
-		// MJoin validation
-		for ( $i=0 ; $i<count($this->_join) ; $i++ ) {
-			$this->_join[$i]->validate( $errors, $this, $data['data'] );
+			// MJoin validation
+			for ( $i=0 ; $i<count($this->_join) ; $i++ ) {
+				$this->_join[$i]->validate( $errors, $this, $values );
+			}
 		}
 
 		return count( $errors ) > 0 ? false : true;
@@ -736,15 +791,14 @@ class Editor extends Ext {
 
 		// Row based "joins"
 		for ( $i=0 ; $i<count($this->_join) ; $i++ ) {
-			$this->_join[$i]->data( $this->_db, $this->table(), $this->pkey(),
-				$this->idPrefix(), $out, $options
-			);
+			$this->_join[$i]->data( $this, $out, $options );
 		}
 
 		return array_merge(
 			array(
-				'data'   => $out,
-				'options' => $options
+				'data'    => $out,
+				'options' => $options,
+				'files'   => $this->_fileData()
 			),
 			$ssp
 		);
@@ -755,26 +809,33 @@ class Editor extends Ext {
 	 * Insert a new row in the database
 	 *  @private
 	 */
-	private function _insert( )
+	private function _insert( $values )
 	{
-		// Insert the new row
-		$id = $this->_insert_or_update( null );
+		$this->_trigger( 'preCreate', $values );
 
-		// Was the primary key sent? Unusual, but it is possible
-		if ( isset( $this->_formData[ $this->_pkey ] ) ) {
-			$id = $this->_formData[ $this->_pkey ];
+		// Insert the new row
+		$id = $this->_insert_or_update( null, $values );
+
+		// Was the primary key sent and set? Unusual, but it is possible
+		$pkeyField = $this->_find_field( $this->_pkey, 'name' );
+		if ( $pkeyField && $pkeyField->apply( 'edit', $values ) ) {
+			$id = $pkeyField->val( 'set', $values );
 		}
 
 		// Join tables
 		for ( $i=0 ; $i<count($this->_join) ; $i++ ) {
-			$this->_join[$i]->create( $this->_db, $id, $this->_formData );
+			$this->_join[$i]->create( $this, $id, $values );
 		}
 
 		// Full data set for the created row
 		$row = $this->_get( $id );
-		return count( $row['data'] ) > 0 ?
+		$row = count( $row['data'] ) > 0 ?
 			$row['data'][0] :
 			null;
+
+		$this->_trigger( 'postCreate', $id, $values, $row );
+
+		return $row;
 	}
 
 
@@ -783,30 +844,36 @@ class Editor extends Ext {
 	 *  @param string $id The DOM ID for the row that is being edited.
 	 *  @private
 	 */
-	private function _update( $id )
+	private function _update( $id, $values )
 	{
 		$id = str_replace( $this->_idPrefix, '', $id );
+		$this->_trigger( 'preEdit', $id, $values );
 
 		// Update or insert the rows for the parent table and the left joined
 		// tables
-		$this->_insert_or_update( $id );
+		$this->_insert_or_update( $id, $values );
 
 		// And the join tables
 		for ( $i=0 ; $i<count($this->_join) ; $i++ ) {
-			$this->_join[$i]->update( $this->_db, $id, $this->_formData );
+			$this->_join[$i]->update( $this, $id, $values );
 		}
 
 		// Was the primary key altered as part of the edit? Unusual, but it is
 		// possible
-		$getId = isset( $this->_formData[ $this->_pkey ] ) ?
-			$this->_formData[ $this->_pkey ] :
+		$pkeyField = $this->_find_field( $this->_pkey, 'name' );
+		$getId = $pkeyField && $pkeyField->apply( 'edit', $values ) ?
+			$pkeyField->val( 'set', $values ) :
 			$id;
 
 		// Full data set for the modified row
 		$row = $this->_get( $getId );
-		return count( $row['data'] ) > 0 ?
+		$row = count( $row['data'] ) > 0 ?
 			$row['data'][0] :
 			null;
+
+		$this->_trigger( 'postEdit', $id, $values, $row );
+
+		return $row;
 	}
 
 
@@ -817,23 +884,24 @@ class Editor extends Ext {
 	private function _remove( $data )
 	{
 		$ids = array();
-		$inIds = is_array( $data['id'] ) ?
-			$data['id'] :
-			array( $data['id'] );
 
-		if ( count( $inIds ) === 0 ) {
-			throw new \Exception('No ids submitted for the delete');
+		// Get the ids to delete from the data source
+		foreach ($data['data'] as $idSrc => $rowData) {
+			// Strip the ID prefix that the client-side sends back
+			$id = str_replace( $this->_idPrefix, "", $idSrc );
+
+			$this->_trigger( 'preRemove', $id, $rowData );
+			$ids[] = $id;
 		}
 
-		// Strip the ID prefix that the client-side sends back
-		for ( $i=0 ; $i<count($inIds) ; $i++ ) {
-			$ids[] = str_replace( $this->_idPrefix, "", $inIds[$i] );
+		if ( count( $ids ) === 0 ) {
+			throw new \Exception('No ids submitted for the delete');
 		}
 
 		// Row based joins - remove first as the host row will be removed which
         // is a dependency
 		for ( $i=0 ; $i<count($this->_join) ; $i++ ) {
-			$this->_join[$i]->remove( $this->_db, $ids );
+			$this->_join[$i]->remove( $this, $ids );
 		}
 
 		// Remove from the left join tables
@@ -862,6 +930,12 @@ class Editor extends Ext {
 		for ( $i=0, $ien=count($this->_table) ; $i<$ien ; $i++ ) {
 			$this->_remove_table( $this->_table[$i], $ids );
 		}
+
+		foreach ($data['data'] as $idSrc => $rowData) {
+			$id = str_replace( $this->_idPrefix, "", $idSrc );
+
+			$this->_trigger( 'postRemove', $id, $rowData );
+		}
 	}
 
 
@@ -871,7 +945,30 @@ class Editor extends Ext {
 	 */
 	private function _upload( $data )
 	{
+		// Search for upload field in local fields
 		$field = $this->_find_field( $data['uploadField'], 'name' );
+
+		if ( ! $field ) {
+			// Perhaps it is in a join instance
+			for ( $i=0 ; $i<count($this->_join) ; $i++ ) {
+				$join = $this->_join[$i];
+				$fields = $join->fields();
+
+				for ( $j=0, $jen=count($fields) ; $j<$jen ; $j++ ) {
+					$joinField = $fields[ $j ];
+					$name = $join->name().'[].'.$joinField->name();
+
+					if ( $name === $data['uploadField'] ) {
+						$field = $joinField;
+						$fieldName = $name;
+					}
+				}
+			}
+		}
+		else {
+			$fieldName = $field->name();
+		}
+
 		if ( ! $field ) {
 			throw new \Exception("Unknown upload field name submitted");
 		}
@@ -881,35 +978,102 @@ class Editor extends Ext {
 			throw new \Exception("File uploaded to a field that does not have upload options configured");
 		}
 
-		$res = $upload->exec( $this );
+		$res = $upload->exec( $this, $field );
 
 		if ( $res === false ) {
 			$this->_out['fieldErrors'][] = array(
-				"name"   => $field->name(),
-				"status" => $upload->error()
+				"name"   => $fieldName,      // field name can be just the field's
+				"status" => $upload->error() // name or a join combination
 			);
 		}
 		else {
+			$files = $this->_fileData( $upload->table() );
+
+			$this->_out['files'] = $files;
 			$this->_out['upload']['id'] = $res;
-			$table = $upload->table();
+		}
+	}
 
-			if ( $table ) {
-				$q = $this->db()
-					->query( 'select', $table )
-					->where( $upload->pkey(), $res );
 
-				foreach ($this->_fields as $field) {
-					if ( $field->apply('get') && $this->_part( $field->dbField(), 'table' ) === $table ) {
-						$q->get( $field->dbField() );
-					}
+	/**
+	 * Get information about the files that are detailed in the database for
+	 * the fields which have an upload method defined on them.
+	 *
+	 * @param  string [$limitTable=null] Limit the data gathering to a single
+	 *     table only
+	 * @return array File information
+	 * @private
+	 */
+	private function _fileData ( $limitTable=null )
+	{
+		$files = array();
+
+		// The fields in this instance
+		$this->_fileDataFields( $files, $this->_fields, $limitTable );
+		
+		// From joined tables
+		for ( $i=0 ; $i<count($this->_join) ; $i++ ) {
+			$this->_fileDataFields( $files, $this->_join[$i]->fields(), $limitTable );
+		}
+
+		return $files;
+	}
+
+
+	/**
+	 * Common file get method for any array of fields
+	 * @param  array &$files File output array
+	 * @param  array $fields Fields to get file information about
+	 * @param  string $limitTable Limit the data gathering to a single table
+	 *     only
+	 * @private
+	 */
+	private function _fileDataFields ( &$files, $fields, $limitTable )
+	{
+		foreach ($fields as $field) {
+			$upload = $field->upload();
+
+			if ( $upload ) {
+				$table = $upload->table();
+
+				if ( $limitTable !== null && $table !== $limitTable ) {
+					continue;
 				}
 
-				$row = $q->exec()->fetch();
+				if ( isset( $files[ $table ] ) ) {
+					continue;
+				}
 
-				foreach ($this->_fields as $field) {
-					if ( $field->apply('get') && $this->_part( $field->dbField(), 'table' ) === $table ) {
-						$field->write( $this->_out['upload']['row'], $row );
-					}
+				$fileData = $upload->data( $this->_db );
+
+				if ( $fileData !== null ) {
+					$files[ $table ] = $fileData;
+				}
+			}
+		}
+	}
+
+	/**
+	 * Run the file clean up
+	 *
+	 * @private
+	 */
+	private function _fileClean ()
+	{
+		foreach ( $this->_fields as $field ) {
+			$upload = $field->upload();
+
+			if ( $upload ) {
+				$upload->dbCleanExec( $this, $field );
+			}
+		}
+
+		for ( $i=0 ; $i<count($this->_join) ; $i++ ) {
+			foreach ( $this->_join[$i]->fields() as $field ) {
+				$upload = $field->upload();
+
+				if ( $upload ) {
+					$upload->dbCleanExec( $this, $field );
 				}
 			}
 		}
@@ -1073,7 +1237,7 @@ class Editor extends Ext {
 			$column = $http['columns'][$i];
 			$search = $column['search']['value'];
 
-			if ( $search && $column['searchable'] == 'true' ) {
+			if ( $search !== '' && $column['searchable'] == 'true' ) {
 				$query->where( $this->_ssp_field( $http, $i ), '%'.$search.'%', 'like' );
 			}
 		}
@@ -1144,6 +1308,7 @@ class Editor extends Ext {
 	 * Get a field instance from a known field name
 	 *
 	 *  @param string $name Field name
+	 *  @param string $type Matching name type
 	 *  @return Field Field instance
 	 *  @private
 	 */
@@ -1174,12 +1339,13 @@ class Editor extends Ext {
 	 *      performed.
 	 *  @private
 	 */
-	private function _insert_or_update ( $id )
+	private function _insert_or_update ( $id, $values )
 	{
 		// Loop over all tables in _table, doing the insert or update as needed
 		for ( $i=0, $ien=count( $this->_table ) ; $i<$ien ; $i++ ) {
 			$res = $this->_insert_or_update_table(
 				$this->_table[$i],
+				$values,
 				$id === null ?
 					null :
 					array($this->_pkey => $id)
@@ -1217,17 +1383,25 @@ class Editor extends Ext {
 				$where = array( $childLink => $id );
 			}
 			else {
+				// We need submitted information about the joined data to be
+				// submitted as well as the new value. We first check if the
+				// host field was submitted
 				$field = $this->_find_field( $parentLink, 'db' );
-				if ( ! $field ) {
-					// The parent field wasn't included in the field list, so
-					// nothing can be done with it
-					continue;
+
+				if ( ! $field || ! $field->apply( 'set', $values ) ) {
+					// If not, then check if the child id was submitted
+					$field = $this->_find_field( $childLink, 'db' );
+
+					// No data available, so we can't do anything
+					if ( ! $field || ! $field->apply( 'set', $values ) ) {
+						continue;
+					}
 				}
 
-				$where = array( $childLink => $field->val('set', $this->_formData) );
+				$where = array( $childLink => $field->val('set', $values) );
 			}
 
-			$this->_insert_or_update_table( $join['table'], $where );
+			$this->_insert_or_update_table( $join['table'], $values, $where );
 		}
 
 		return $id;
@@ -1248,11 +1422,10 @@ class Editor extends Ext {
 	 *      performed.
 	 *  @private
 	 */
-	private function _insert_or_update_table ( $table, $where=null )
+	private function _insert_or_update_table ( $table, $values, $where=null )
 	{
 		$set = array();
 		$action = ($where === null) ? 'create' : 'edit';
-		$tableName = $this->_alias( $table, 'orig' );
 		$tableAlias = $this->_alias( $table, 'alias' );
 
 		for ( $i=0 ; $i<count($this->_fields) ; $i++ ) {
@@ -1271,7 +1444,7 @@ class Editor extends Ext {
 
 			// Check if this field should be set, based on options and
 			// submitted data
-			if ( ! $field->apply( $action, $this->_formData ) ) {
+			if ( ! $field->apply( $action, $values ) ) {
 				continue;
 			}
 
@@ -1279,7 +1452,7 @@ class Editor extends Ext {
 			// name prefixing the column name. Todo: it might be nicer to have
 			// the db layer abstract this out?
 			$fieldPart = $this->_part( $field->dbField(), 'field' );
-			$set[ $fieldPart ] = $field->val('set', $this->_formData);
+			$set[ $fieldPart ] = $field->val( 'set', $values );
 		}
 
 		// Add where fields if setting where values and required for this
@@ -1459,6 +1632,29 @@ class Editor extends Ext {
 			return $table;
 		}
 		return $column;
+	}
+
+
+	/**
+	 * Trigger an event
+	 * 
+	 * @private
+	 */
+	private function _trigger ()
+	{
+		$args = func_get_args();
+		$eventName = array_shift( $args );
+		array_unshift( $args, $this );
+
+		if ( ! isset( $this->_events[ $eventName ] ) ) {
+			return;
+		}
+
+		$events = $this->_events[ $eventName ];
+
+		for ( $i=0, $ien=count($events) ; $i<$ien ; $i++ ) {
+			call_user_func_array( $events[$i], $args );
+		}
 	}
 }
 

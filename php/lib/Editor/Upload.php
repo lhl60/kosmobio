@@ -119,6 +119,7 @@ class Upload extends DataTables\Ext {
 	 */
 	
 	private $_action = null;
+	private $_dbCleanCallback = null;
 	private $_dbTable = null;
 	private $_dbPKey = null;
 	private $_dbFields = null;
@@ -226,6 +227,25 @@ class Upload extends DataTables\Ext {
 
 
 	/**
+	 * Set a callback function that is used to remove files which no longer have
+	 * a reference in a source table.
+	 *
+	 * @param  function $callback Function that will be executed on clean. It is
+	 *     given an array of information from the database about the orphaned
+	 *     rows, and can return true to indicate that the rows should be
+	 *     removed from the database. Any other return value (including none)
+	 *     will result in the records being retained.
+	 * @return self Current instance, used for chaining
+	 */
+	public function dbClean( $callback )
+	{
+		$this->_dbCleanCallback = $callback;
+
+		return $this;
+	}
+
+
+	/**
 	 * Add a validation method to check file uploads. Multiple validators can be
 	 * added by calling this method multiple times - they will be executed in
 	 * sequence when a file has been uploaded.
@@ -249,9 +269,61 @@ class Upload extends DataTables\Ext {
 	 */
 	
 	/**
+	 * Get database information data from the table
+	 *
+	 * @param [Database] $db Database
+	 * @return array Database information
+	 * @internal
+	 */
+	public function data ( $db )
+	{
+		if ( ! $this->_dbTable ) {
+			return null;
+		}
+
+		// Select the details requested, for the columns requested
+		$q = $db
+			->query( 'select' )
+			->table( $this->_dbTable )
+			->get( $this->_dbPKey );
+
+		foreach ( $this->_dbFields as $column => $prop ) {
+			if ( $prop !== self::DB_CONTENT ) {
+				$q->get( $column );
+			}
+		}
+
+		$result = $q->exec()->fetchAll();
+		$out = [];
+
+		for ( $i=0, $ien=count($result) ; $i<$ien ; $i++ ) {
+			$out[ $result[$i][ $this->_dbPKey ] ] = $result[$i];
+		}
+
+		return $out;
+	}
+
+
+	/**
+	 * Clean the database
+	 * @param  Editor $editor Calling Editor instance
+	 * @param  Field $field   Host field
+	 * @internal
+	 */
+	public function dbCleanExec ( $editor, $field )
+	{
+		// Database and file system clean up BEFORE adding the new file to
+		// the db, otherwise it will be removed immediately
+		$tables = $editor->table();
+		$this->_dbClean( $editor->db(), $tables[0], $field->dbField() );
+	}
+
+
+	/**
 	 * Get the set error message
 	 * 
 	 * @return string Class error
+	 * @internal
 	 */
 	public function error ()
 	{
@@ -261,8 +333,10 @@ class Upload extends DataTables\Ext {
 
 	/**
 	 * Execute an upload
+	 *
 	 * @param  Editor $editor Calling Editor instance
 	 * @return int Primary key value
+	 * @internal
 	 */
 	public function exec ( $editor )
 	{
@@ -300,8 +374,22 @@ class Upload extends DataTables\Ext {
 			}
 		}
 
-		// Commit to the database
+		// Database
 		if ( $this->_dbTable ) {
+			foreach ( $this->_dbFields as $column => $prop ) {
+				// We can't know what the path is, if it has moved into place
+				// by an external function - throw an error if this does happen
+				if ( ! is_string( $this->_action ) &&
+					 ($prop === self::DB_SYSTEM_PATH || $prop === self::DB_WEB_PATH )
+				) {
+					$this->_error = "Cannot set path information in database ".
+						"if a custom method is used to save the file.";
+
+					return false;
+				}
+			}
+
+			// Commit to the database
 			$id = $this->_dbExec( $editor->db() );
 		}
 
@@ -314,6 +402,7 @@ class Upload extends DataTables\Ext {
 	 * Get the primary key column for the table
 	 *
 	 * @return string Primary key column name
+	 * @internal
 	 */
 	public function pkey ()
 	{
@@ -325,6 +414,7 @@ class Upload extends DataTables\Ext {
 	 * Get the db table name
 	 *
 	 * @return string DB table name
+	 * @internal
 	 */
 	public function table ()
 	{
@@ -359,13 +449,82 @@ class Upload extends DataTables\Ext {
 		$res = move_uploaded_file( $upload['tmp_name'], $to );
 
 		if ( $res === false ) {
-			$this->_error( "An error occurred while moving the uploaded file." );
+			$this->_error = "An error occurred while moving the uploaded file.";
 			return false;
 		}
 
 		return $id !== null ?
 			$id :
 			$to;
+	}
+
+	/**
+	 * Perform the database clean by first getting the information about the
+	 * orphaned rows and then calling the callback function. The callback can
+	 * then instruct the rows to be removed through the return value.
+	 *
+	 * @param  Database $db Database instance
+	 * @param  string $editorTable Editor Editor instance table name
+	 * @param  string $fieldName   Host field's name
+	 */
+	private function _dbClean ( $db, $editorTable, $fieldName )
+	{
+		$callback = $this->_dbCleanCallback;
+
+		if ( ! $this->_dbTable || ! $callback ) {
+			return false;
+		}
+
+		$a = explode('.', $fieldName);
+		if ( count($a) === 1 ) {
+			$table = $editorTable;
+			$field = $a[0];
+		}
+		else if ( count($a) === 2 ) {
+			$table = $a[0];
+			$field = $a[1];
+		}
+		else {
+			$table = $a[1];
+			$field = $a[2];
+		}
+
+		// Select the details requested, for the columns requested
+		$q = $db
+			->query( 'select' )
+			->table( $this->_dbTable )
+			->get( $this->_dbPKey );
+
+		foreach ( $this->_dbFields as $column => $prop ) {
+			if ( $prop !== self::DB_CONTENT ) {
+				$q->get( $column );
+			}
+		}
+
+		$q->where( $this->_dbPKey, '(SELECT '.$field.' FROM '.$table.'  WHERE '.$field.' IS NOT NULL)', 'NOT IN', false );
+
+		$data = $q->exec()->fetchAll();
+
+		if ( count( $data ) === 0 ) {
+			return;
+		}
+
+		$result = $callback( $data );
+
+		// Delete the selected rows, iff the developer says to do so with the
+		// returned value (i.e. acknowledge that the files have be removed from
+		// the file system)
+		if ( $result === true ) {
+			$qDelete = $db
+				->query( 'delete' )
+				->table( $this->_dbTable );
+
+			for ( $i=0, $ien=count( $data ) ; $i<$ien ; $i++ ) {
+				$qDelete->or_where( $this->_dbPKey, $data[$i][ $this->_dbPKey ] );
+			}
+
+			$qDelete->exec();
+		}
 	}
 
 	/**
@@ -443,6 +602,8 @@ class Upload extends DataTables\Ext {
 		// etc be created. It makes it a bit less efficient but much more
 		// compatible
 		if ( count( $pathFields ) ) {
+			// For this to operate the action must be a string, which is
+			// validated in the `exec` method
 			$path = $this->_path( $upload['name'], $id );
 			$webPath = str_replace($_SERVER['DOCUMENT_ROOT'], '', $path);
 			$q = $db

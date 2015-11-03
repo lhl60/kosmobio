@@ -1,0 +1,1893 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EventList PID="0x12A4" TID="0xC" ProviderName="ebillet a/s" Caller="2.111.129.36" PublishDate="2015-11-03T17:31:01+01:00" RefNo="28806990" ExecuteTime="00:00:00.0624001" StreamTime="00:00:00.0624001">
+  <Organizers>
+    <Organizer No="201" SystemNo="3">
+      <Name>Kosmorama</Name>
+      <Address>Algade 15</Address>
+      <Zip>DK-4230</Zip>
+      <City>Skælskør</City>
+      <LocalTime>2015-11-03T17:31:01+01:00</LocalTime>
+      <PosterPath3D>
+      </PosterPath3D>
+    </Organizer>
+  </Organizers>
+  <Locations>
+    <Location No="1" OrganizerNo="201" SystemNo="3">
+      <Name>Sal 1</Name>
+      <SubName>1</SubName>
+      <Address>Algade 15</Address>
+      <Zip>4230</Zip>
+      <City>Skælskør</City>
+      <Seats TotalCount="93" />
+    </Location>
+    <Location No="3" OrganizerNo="201" SystemNo="3">
+      <Name>musik 110</Name>
+      <SubName>
+      </SubName>
+      <Address>
+      </Address>
+      <Zip>
+      </Zip>
+      <City>
+      </City>
+      <Seats TotalCount="110" />
+    </Location>
+    <Location No="5" OrganizerNo="201" SystemNo="3">
+      <Name>musik125</Name>
+      <SubName>
+      </SubName>
+      <Address>
+      </Address>
+      <Zip>
+      </Zip>
+      <City>
+      </City>
+      <Seats TotalCount="125" />
+    </Location>
+  </Locations>
+  <Categories>
+    <Category No="4">
+      <Name>Musik</Name>
+    </Category>
+    <Category No="2">
+      <Name>Biograf</Name>
+    </Category>
+  </Categories>
+  <Movies>
+    <Movie No="11787" MovieBaseNo="0" MaxDay="0" Actual="1">
+      <Name>SPECTRE</Name>
+      <SubName>Orig. vers. med danske undertekster</SubName>
+      <OriginalName>Spectre</OriginalName>
+      <Censoring>
+      </Censoring>
+      <Synopsis>En kryptisk besked fra fortiden sender Bond på en hemmelig mission til Mexico City og videre til Rom, hvor han møder den smukke og farlige Lucia Sciarra (Monica Belliúcci). Hun hjælper Bond med at infiltrere et hemmeligt møde, der bringer Bond på sporet af den lyssky organisation SPECTRE.
+
+Imens kæmper hans chef ”M” (Ralph Fiennes) mod interne politiske kræfter i London, som vil nedlægge efterretningstjenesten og pensionere MI6 agenterne. Det lykkes dog Bond at få Moneypenny (Naomie Harris) og Qs (Ben Whishaw) hjælp til at finde Madeleine Swann (Léa Seydoux). Hun er datter til hans gamle ærkefjende Mr. White (Jesper Christensen) og kan være nøglen til at gennemskue SPECTRE.
+
+Efterhånden som Bond får afdækket mere og mere af den grusomme sandhed bag SPECTRE, opdager han en uhyggelig forbindelse mellem ham selv og personen i centrum for organisationen (Christoph Waltz).
+Kilde: Filmcompagniet</Synopsis>
+      <Path>SpectreNy-DK.jpg</Path>
+      <LargePath>SpectreNy-DK.large.jpg</LargePath>
+      <HDPath>SpectreNy-DK.hd.jpg</HDPath>
+      <TrailerId>16996</TrailerId>
+      <LivePoster>SPECTRE_NY.mp4</LivePoster>
+      <Advertisement>SpectreDk.adv.jpg</Advertisement>
+      <Genre>Action, Adventure, Thriller</Genre>
+      <Length Seconds="8880">02:28</Length>
+      <OpeningDate Date="151878">2015-10-30T00:00:00+01:00</OpeningDate>
+      <IMDb No="2379713" Id="2379713">tt2379713</IMDb>
+      <Dimension>2</Dimension>
+      <Pictures>
+        <Item>Spectre.pic1.jpg</Item>
+        <Item>Spectre.pic2.jpg</Item>
+        <Item>Spectre.pic3.jpg</Item>
+      </Pictures>
+      <Actors>
+        <Item>Daniel Craig</Item>
+        <Item>Monica Bellucci</Item>
+        <Item>Christoph Waltz</Item>
+        <Item>Léa Seydoux</Item>
+      </Actors>
+      <Directors>
+        <Item>Sam Mendes</Item>
+      </Directors>
+    </Movie>
+    <Movie No="11854" MovieBaseNo="0" MaxDay="0">
+      <Name>La Boheme - Sydney Opera House</Name>
+      <SubName>
+      </SubName>
+      <OriginalName>
+      </OriginalName>
+      <Censoring>
+      </Censoring>
+      <Synopsis>
+      </Synopsis>
+      <Path>LaBohemeSydney.jpg</Path>
+      <LargePath>LaBohemeSydney.large.jpg</LargePath>
+      <HDPath>LaBohemeSydney.hd.jpg</HDPath>
+      <TrailerId>
+      </TrailerId>
+      <LivePoster>
+      </LivePoster>
+      <Advertisement>
+      </Advertisement>
+      <Genre>
+      </Genre>
+      <Length Seconds="7800">02:10</Length>
+      <OpeningDate Date="0">1600-01-01T00:00:00+01:00</OpeningDate>
+      <IMDb No="0" Id="" />
+      <Dimension>2</Dimension>
+      <Pictures />
+      <Actors />
+      <Directors />
+    </Movie>
+    <Movie No="12102" MovieBaseNo="0" MaxDay="0">
+      <Name>Kvinden i Guld</Name>
+      <SubName>Orig. vers. med danske undertekster</SubName>
+      <OriginalName>Woman in Gold</OriginalName>
+      <Censoring>Tilladt over 11 år</Censoring>
+      <Synopsis>Et velspillet og medrivende drama om en af historiens største kunstskandaler
+Oscarvinder Helen Mirren spiller Maria Altmann i den sande historie om en jødisk kvindes kamp for at genvinde sin retmæssige arv og sin familiens ære. 50 år efter Maria flygtede til USA, rejser hun ud for at hente de kunstskatte hjem, som nazisterne stjal fra familien, heriblandt Gustav Klimts berømte maleri ’Portræt af Adele Bloch-Bauer I’. Sammen med den unge men handlekraftige advokat, Randy Schoenberg (Ryan Reynolds), starter Maria en sensationel juridisk kamp, der bringer dem helt ind i magtcentret af det østrigske etablissement og til USA’s højesteret. Det bliver en rejse, der tvinger alle til at se fortidens ubekvemme sandheder i øjnene.
+Kilde: Scanbox</Synopsis>
+      <Path>KvindenIGuldDk.jpg</Path>
+      <LargePath>KvindenIGuldDk.large.jpg</LargePath>
+      <HDPath>KvindenIGuldDk.hd.jpg</HDPath>
+      <TrailerId>17106</TrailerId>
+      <LivePoster>kvindeniguld.mp4</LivePoster>
+      <Advertisement>KvindenIGuld-Dk.adv.jpg</Advertisement>
+      <Genre>Drama</Genre>
+      <Length Seconds="6540">01:49</Length>
+      <OpeningDate Date="151877">2015-10-29T00:00:00+01:00</OpeningDate>
+      <IMDb No="2404425" Id="2404425">tt2404425</IMDb>
+      <Dimension>2</Dimension>
+      <Pictures>
+        <Item>WomanInGold.pic1.jpg</Item>
+        <Item>WomanInGold.pic2.jpg</Item>
+        <Item>WomanInGold.pic3.jpg</Item>
+      </Pictures>
+      <Actors>
+        <Item>Helen Mirren</Item>
+        <Item>Ryan Reynolds</Item>
+        <Item>Daniel Brühl</Item>
+      </Actors>
+      <Directors>
+        <Item>Simon Curtis</Item>
+      </Directors>
+    </Movie>
+    <Movie No="12118" MovieBaseNo="0" MaxDay="0">
+      <Name>Den Franske Forbindelse</Name>
+      <SubName>Orig. vers. med danske undertekster</SubName>
+      <OriginalName>La French</OriginalName>
+      <Censoring>
+      </Censoring>
+      <Synopsis>"Den Franske Forbindelse" begynder i 1975 i Marseille. Pierre Michel (Jean Dujardin) er politimagistrat og netop flyttet til byen sammen med sin kone og børn, da han bliver udnævnt til leder for opklaringen af organiseret kriminalitet. 
+Det kriminelle miljø i havnebyen bliver hårdt styret af gangsterbossen Gaëtan "Tany" Zampa (Gilles Lellouche), der holder både myndighederne og de kriminelle forbindelser i et jerngreb. Han anses som nærmest urørlig, men Pierre er fast besluttet på at komme ham til livs...</Synopsis>
+      <Path>DenFranskeForbindelse-DK.jpg</Path>
+      <LargePath>DenFranskeForbindelse-DK.large.jpg</LargePath>
+      <HDPath>DenFranskeForbindelse-DK.hd.jpg</HDPath>
+      <TrailerId>
+      </TrailerId>
+      <LivePoster>
+      </LivePoster>
+      <Advertisement>LaFrench.adv.jpg</Advertisement>
+      <Genre>Action, Krimi, Thriller</Genre>
+      <Length Seconds="8100">02:15</Length>
+      <OpeningDate Date="151842">2015-09-24T00:00:00+02:00</OpeningDate>
+      <IMDb No="0" Id="" />
+      <Dimension>2</Dimension>
+      <Pictures>
+        <Item>LaFrench.pic1.jpg</Item>
+        <Item>LaFrench.pic2.jpg</Item>
+        <Item>LaFrench.pic3.jpg</Item>
+      </Pictures>
+      <Actors>
+        <Item>Jean Dujardin</Item>
+        <Item>Céline Sallette</Item>
+        <Item>Gilles Lellouche</Item>
+        <Item>Mélanie Doutey</Item>
+      </Actors>
+      <Directors>
+        <Item>Cédric Jimenez</Item>
+      </Directors>
+    </Movie>
+    <Movie No="12156" MovieBaseNo="0" MaxDay="0">
+      <Name>Amy</Name>
+      <SubName>Orig. vers. med danske undertekster</SubName>
+      <OriginalName>Amy</OriginalName>
+      <Censoring>Tilladt over 15 år</Censoring>
+      <Synopsis>Et intimt portræt af den mytiske rockstjerne Amy Winehouse. Gennem gamle hjemmevideoer, intime interviews og udtalelser fra sangerindens familie og samarbejdspartnere ser vi en ny side af den tragiske skæbne Winehouse, hvis alkoholmisbrug og personlige forhold ofte var altoverskyggende i tabloidmedierne. I filmen indrømmer sangerinden blandt andet, at hun fortryder sin berømmelse og selvsabotagen, det medførte – og som førte til hendes alt for tidlige død som 27-årig i 2011. ‘Amy’ er instrueret af BAFTA-vinderen Asif Kapadia.</Synopsis>
+      <Path>AmyWine-Final.jpg</Path>
+      <LargePath>AmyWine-Final.large.jpg</LargePath>
+      <HDPath>AmyWine-Final.hd.jpg</HDPath>
+      <TrailerId>17523</TrailerId>
+      <LivePoster>Amy.mp4</LivePoster>
+      <Advertisement>AmyWine.adv.jpg</Advertisement>
+      <Genre>Biografi, Dokumentar</Genre>
+      <Length Seconds="7620">02:07</Length>
+      <OpeningDate Date="151786">2015-07-30T00:00:00+02:00</OpeningDate>
+      <IMDb No="2870648" Id="2870648">tt2870648</IMDb>
+      <Dimension>2</Dimension>
+      <Pictures>
+        <Item>Amy.pic1.jpg</Item>
+        <Item>Amy.pic2.jpg</Item>
+        <Item>Amy.pic3.jpg</Item>
+      </Pictures>
+      <Actors>
+        <Item>Amy Winehouse</Item>
+      </Actors>
+      <Directors>
+        <Item>Asif Kapadia</Item>
+      </Directors>
+    </Movie>
+    <Movie No="12299" MovieBaseNo="0" MaxDay="0">
+      <Name>DOXBIO - Mand Falder</Name>
+      <SubName>Med Dansk Tale</SubName>
+      <OriginalName>Mand Falder</OriginalName>
+      <Censoring>
+      </Censoring>
+      <Synopsis>Hvad sker der, na&amp;#778;r en verdenskunstner pludselig mister sine naturgivne evner?
+
+Filminstruktøren Anne Wivel har fulgt sin ven, maleren Per Kirkeby pa&amp;#778; nært hold, efter at han faldt ned ad en trappe og slog hovedet. Han havde tidligere overvundet følgerne af en hjerneblødning og to blodpropper, men faldet pa&amp;#778; trappen for to a&amp;#778;r siden resulterede i en hjerneskade, der forhindrer ham i at arbejde. Han har ikke bare mistet sin førlighed, men ogsa&amp;#778; evnen til at genkende farver og sa&amp;#778;gar sine egne kunstværker.
+
+Udover at fotografere er Anne Wivel ogsa&amp;#778; til stede som samtalepartner og følger Per Kirkeby, som kæmper for at vende tilbage, idet han samtidig erkender sine manglende fremskridt. For ham synes der at være lang vej tilbage, for kunsten er jo ikke blot et spørgsma&amp;#778;l om at kunne male noget kønt og vellykket, det væsentlige ligger i overskridelsen af den gode smag. Det er dette hug, maleren savner.
+
+I filmen møder vi foruden kunstneren, hans hustru, venner og samarbejdspartnere, men dens absolutte hovedperson er Per Kirkeby i et usædvanligt a&amp;#778;bent møde med filminstruktøren Anne Wivel og hendes kamera. 
+Alt – fra hverdagens genoptræning til følelsesladede indsigter – lægges nøgternt frem.
+</Synopsis>
+      <Path>MandFalder-1.jpg</Path>
+      <LargePath>MandFalder-1.large.jpg</LargePath>
+      <HDPath>MandFalder-1.hd.jpg</HDPath>
+      <TrailerId>50003</TrailerId>
+      <LivePoster>
+      </LivePoster>
+      <Advertisement>MandFalder.adv.jpg</Advertisement>
+      <Genre>Dokumentar</Genre>
+      <Length Seconds="7200">02:00</Length>
+      <OpeningDate Date="151890">2015-11-11T00:00:00+01:00</OpeningDate>
+      <IMDb No="0" Id="" />
+      <Dimension>2</Dimension>
+      <Pictures>
+        <Item>MandFalder.pic1.jpg</Item>
+      </Pictures>
+      <Actors />
+      <Directors>
+        <Item>Anne Wivel</Item>
+      </Directors>
+    </Movie>
+    <Movie No="12300" MovieBaseNo="0" MaxDay="0">
+      <Name>DOXBIO - Ejersbo</Name>
+      <SubName>Med Dansk Tale</SubName>
+      <OriginalName>
+      </OriginalName>
+      <Censoring>
+      </Censoring>
+      <Synopsis>Portræt af en af Danmarks vildeste forfattere
+
+Jakob Ejersbo skrev med sin ’beskidte realisme’ om unge mennesker, der mister fodfæstet og opdager at deres forældre ikke fatter en skid.
+I 2003 fik han helt usædvanligt De Gyldne Laurbær for sin første roman Nordkraft, for som komiteen sagde: ’Dit talent er sa&amp;#778; stort og uimodsigeligt, at der ikke er nogen grund til at vente pa&amp;#778; flere romaner før prisen kommer’. Fem a&amp;#778;r senere var Ejersbo død.
+
+I EJERSBO trodser forfatterens to bedste venner smøgerne og en hel del fornuft for at indfri Jakob Ejersbos sidste ønske; at få spredt sin aske fra Kilimanjaros tinde. Jakob Ejersbo levede sin tidlige barndom i Afrika, hvilket formede ham og forfulgte ham hele livet. Undervejs fortæller venner, familie og kolleger om den fandenivoldske og stædige enspænders ellers ret private liv.
+
+Karaktererne fra Ejersbos bøger bliver vakt til live og blander sig i beretningen om, hvad kunstnerlivet koster, hvis man - som Jakob gjorde - kaster sig kompromisløst ind i det. Jakob Ejersbo skrev med døden i hælene og ofrede alt andet for at na&amp;#778; at færdiggøre det værk han altid havde ville skrive: Afrika-trilogien.
+</Synopsis>
+      <Path>Ejersbo.jpg</Path>
+      <LargePath>Ejersbo.large.jpg</LargePath>
+      <HDPath>Ejersbo.hd.jpg</HDPath>
+      <TrailerId>
+      </TrailerId>
+      <LivePoster>
+      </LivePoster>
+      <Advertisement>Ejersbo.adv.jpg</Advertisement>
+      <Genre>
+      </Genre>
+      <Length Seconds="4500">01:15</Length>
+      <OpeningDate Date="151904">2015-11-25T00:00:00+01:00</OpeningDate>
+      <IMDb No="0" Id="" />
+      <Dimension>2</Dimension>
+      <Pictures>
+        <Item>Ejersbo.pic1.jpg</Item>
+      </Pictures>
+      <Actors />
+      <Directors />
+    </Movie>
+    <Movie No="12341" MovieBaseNo="0" MaxDay="1">
+      <Name>Praktikanten</Name>
+      <SubName>Orig. vers. med danske undertekster</SubName>
+      <OriginalName>The Intern</OriginalName>
+      <Censoring>Tilladt for alle, men frarådes under 7 år</Censoring>
+      <Synopsis>Hjertevarm komedie med Robert De Niro og Anne Hathaway i hovedrollerne. Robert De Niro spiller den 70-årige enkemand, Ben Whittaker, som er gået på pension. Han synes dog, at livet som pensionist er blevet lidt trivielt. I forsøget på at få lidt luft under vingerne bliver han seniorpraktikant hos et ungt smart online modefirma. Det styres af den benhårde og stressede chef Jules Ostin (Anne Hathaway), der ved, hvad hun vil og på ingen måde mener, at hun har brug for hjælp. På trods af dette og deres forskelligheder, er det måske lige netop Bens venskab, hun alligevel står og mangler.
+
+Filmen er skrevet og instrueret af den Oscar-nominerede og prisbelønnede filmskaber Nancy Meyers, som står bag succeserne "Det’ indviklet", "Når du mindst venter det” og ”What Women Want”.
+Kilde: Filmcompagniet</Synopsis>
+      <Path>Praktikanten.jpg</Path>
+      <LargePath>Praktikanten.large.jpg</LargePath>
+      <HDPath>Praktikanten.hd.jpg</HDPath>
+      <TrailerId>17538</TrailerId>
+      <LivePoster>Praktikanten.mp4</LivePoster>
+      <Advertisement>PraktikantenNy.adv.jpg</Advertisement>
+      <Genre>Komedie</Genre>
+      <Length Seconds="7260">02:01</Length>
+      <OpeningDate Date="151849">2015-10-01T00:00:00+02:00</OpeningDate>
+      <IMDb No="2361509" Id="2361509">tt2361509</IMDb>
+      <Dimension>2</Dimension>
+      <Pictures>
+        <Item>Praktikanten.pic1.jpg</Item>
+        <Item>Praktikanten.pic2.jpg</Item>
+        <Item>Praktikanten.pic3.jpg</Item>
+      </Pictures>
+      <Actors>
+        <Item>Robert De Niro</Item>
+        <Item>Anne Hathaway</Item>
+        <Item>Nat Wolff</Item>
+      </Actors>
+      <Directors>
+        <Item>Nancy Meyers</Item>
+      </Directors>
+    </Movie>
+    <Movie No="12487" MovieBaseNo="11" MaxDay="0">
+      <Name>Pan 3D</Name>
+      <SubName>Orig. vers. med danske undertekster</SubName>
+      <OriginalName>Pan</OriginalName>
+      <Censoring>Tilladt over 11 år</Censoring>
+      <Synopsis>Peter er en drillesyg 12-årig dreng, med en ukuelig oprørsk personlighed. Men i det dystre børnehjem i London, hvor han har boet hele sit liv, er det ikke ligefrem kvaliteter som får én til at flyve. Men lige pludselig en utrolig aften, bliver Peter ført væk fra børnehjemmet og ud i en livlig og fantastiske verden fyldt af pirater, krigere og feer… kaldet Ønskeøen. Der møder han et fantastisk eventyr og slagsmål om liv eller død i forbindelse med forsøget på at opklare hemmeligheden om sin mor, der efterlod ham på børnehjemmet for længe siden, og hans retmæssige plads i dette magiske land. Sammen med krigeren Tiger Lily og en ny ven ved navn James Hook, skal Peter besejre den hensynsløse Pirat Sortskæg (Hugh Jackman). Kun derved kan han redde Ønskeøen og opdage sin sande skæbne - at blive den helt, som altid vil være kendt som Peter Pan.</Synopsis>
+      <Path>Pan_DK.jpg</Path>
+      <LargePath>Pan_DK.large.jpg</LargePath>
+      <HDPath>Pan_DK.hd.jpg</HDPath>
+      <TrailerId>16533</TrailerId>
+      <LivePoster>Pan.mp4</LivePoster>
+      <Advertisement>Pan-Dk.adv.jpg</Advertisement>
+      <Genre>Adventure, Familiefilm</Genre>
+      <Length Seconds="6660">01:51</Length>
+      <OpeningDate Date="151856">2015-10-08T00:00:00+02:00</OpeningDate>
+      <IMDb No="3332064" Id="3332064">tt3332064</IMDb>
+      <Dimension>3</Dimension>
+      <Pictures>
+        <Item>Pan.pic1.jpg</Item>
+        <Item>Pan.pic2.jpg</Item>
+        <Item>Pan.pic3.jpg</Item>
+      </Pictures>
+      <Actors>
+        <Item>Amanda Seyfried</Item>
+        <Item>Garrett Hedlund</Item>
+        <Item>Hugh Jackman</Item>
+        <Item>Rooney Mara</Item>
+        <Item>Jason Fuchs</Item>
+        <Item>Cara Delevingne</Item>
+      </Actors>
+      <Directors>
+        <Item>Joe Wright</Item>
+      </Directors>
+    </Movie>
+    <Movie No="12582" MovieBaseNo="0" MaxDay="0">
+      <Name>Taxi Teheran</Name>
+      <SubName>Orig. vers. med danske undertekster</SubName>
+      <OriginalName>Taxi</OriginalName>
+      <Censoring>Tilladt over 11 år</Censoring>
+      <Synopsis>Jafar Panahi lever ikke længere i husarrest, men den verdensberømte iranske instruktør er stadig omfattet af et berufsverbot, som han både modigt og med et stor glimt i øjet omgår med ’Taxi Teheran’, der helt fortjent løb med Guldbjørnen på årets filmfestival i Berlin. I filmen agerer han selv taxichaufføren, der med sit kamera indbygget i instrumentbrættet dokumenterer sine finurlige, morsomme og ind i mellem stærkt bevægende møder med allehånde iranere. På raffineret vis – og med stor menneskevarme – tegnes et portræt af et moderne Iran, som ikke ligner noget, vi kender fra tv-reportagerne og ej heller noget, de lokale myndigheder billiger.
+Kilde: Camera Film</Synopsis>
+      <Path>TaxiTeheranDk.jpg</Path>
+      <LargePath>TaxiTeheranDk.large.jpg</LargePath>
+      <HDPath>TaxiTeheranDk.hd.jpg</HDPath>
+      <TrailerId>17196</TrailerId>
+      <LivePoster>TaxiTeheran.mp4</LivePoster>
+      <Advertisement>TaxiTeheran.adv.jpg</Advertisement>
+      <Genre>Dokumentar, Komedie</Genre>
+      <Length Seconds="5160">01:26</Length>
+      <OpeningDate Date="151849">2015-10-01T00:00:00+02:00</OpeningDate>
+      <IMDb No="4359416" Id="4359416">tt4359416</IMDb>
+      <Dimension>2</Dimension>
+      <Pictures>
+        <Item>TaxiTeheran.pic1.jpg</Item>
+        <Item>TaxiTeheran.pic2.jpg</Item>
+        <Item>TaxiTeheran.pic3.jpg</Item>
+      </Pictures>
+      <Actors>
+        <Item>Jafar Panahi</Item>
+      </Actors>
+      <Directors>
+        <Item>Jafar Panahi</Item>
+      </Directors>
+    </Movie>
+    <Movie No="12590" MovieBaseNo="0" MaxDay="0">
+      <Name>Victoria</Name>
+      <SubName>Orig. vers. med danske undertekster</SubName>
+      <OriginalName>Victoria</OriginalName>
+      <Censoring>Tilladt over 15 år</Censoring>
+      <Synopsis>Den spanske pige Victoria bor i Berlin. En tidlig morgen uden for en natklub møder hun fire lokale drenge, som hun pjatter og flirter med i den gryende morgensol. Hun bliver lokket med til en morgenfest og for en stund virker det som natten ingen ende vil tage. Men begivenhederne tager en langt mere alvorlig drejning, da drengene overtaler hende til at være chauffør ved et bankrøveri. De skylder nemlig en stor portion penge til en ond mafiaboss. Victoria indvilliger i at køre med, og snart er intet som før, og alle ville ønske, de kunne spole tiden tilbage.</Synopsis>
+      <Path>Victoria.jpg</Path>
+      <LargePath>Victoria.large.jpg</LargePath>
+      <HDPath />
+      <TrailerId>17314</TrailerId>
+      <LivePoster>
+      </LivePoster>
+      <Advertisement>Victoria-DK.adv.jpg </Advertisement>
+      <Genre>Drama, Krimi</Genre>
+      <Length Seconds="8400">02:20</Length>
+      <OpeningDate Date="151912">2015-12-03T00:00:00+01:00</OpeningDate>
+      <IMDb No="4226388" Id="4226388">tt4226388</IMDb>
+      <Dimension>2</Dimension>
+      <Pictures />
+      <Actors>
+        <Item>Frederick Lau</Item>
+        <Item>Laia Costa</Item>
+        <Item>Franz Rogowski</Item>
+        <Item>Burak Yigit</Item>
+      </Actors>
+      <Directors>
+        <Item>Sebastian Schipper</Item>
+      </Directors>
+    </Movie>
+    <Movie No="12640" MovieBaseNo="0" MaxDay="0">
+      <Name>Emma og Julemanden</Name>
+      <SubName>Dansk film med Dansk tale</SubName>
+      <OriginalName>Emma og Julemanden</OriginalName>
+      <Censoring>Frarådes under 7 år</Censoring>
+      <Synopsis>11-årige Emma er en fantasifuld pige, der føler sig glemt af sin store familie. Emma elsker eventyrlige væsner, og da hun møder selveste Julemanden Nicolas og hans kone Julie, bliver det begyndelsen på en hæsblæsende rejse ind i Elverriget. Sammen skal de nemlig redde Nicolas og Julies nyfødte datter fra den forbitrede Elverdronning, som har forbudt kærlighed i Elverriget. Emma får uventet hjælp af den nysgerrige elverdreng, Rod, og de opdager at for at få barnet tilbage og redde kærligheden i Elverriget, skal de finde Elverdronningens frosne hjerte.</Synopsis>
+      <Path>EmmaOgJulemanden-DK.jpg</Path>
+      <LargePath>EmmaOgJulemanden-DK.large.jpg</LargePath>
+      <HDPath>EmmaOgJulemanden-DK.hd.jpg</HDPath>
+      <TrailerId>18114</TrailerId>
+      <LivePoster>EmmaOgJulemanden.mp4</LivePoster>
+      <Advertisement>EmmaOgJulemanden-DK.adv.jpg</Advertisement>
+      <Genre>Familiefilm</Genre>
+      <Length Seconds="5460">01:31</Length>
+      <OpeningDate Date="151891">2015-11-12T00:00:00+01:00</OpeningDate>
+      <IMDb No="4819154" Id="4819154">tt4819154</IMDb>
+      <Dimension>2</Dimension>
+      <Pictures>
+        <Item>EmmaJulemanden.pic1.jpg</Item>
+        <Item>EmmaJulemanden.pic2.jpg</Item>
+        <Item>EmmaJulemanden.pic3.jpg</Item>
+      </Pictures>
+      <Actors />
+      <Directors>
+        <Item>Søren Frellesen</Item>
+      </Directors>
+    </Movie>
+    <Movie No="12641" MovieBaseNo="7" MaxDay="0">
+      <Name>The Martian - 3D</Name>
+      <SubName>Orig. vers. med danske undertekster</SubName>
+      <OriginalName>The Martian</OriginalName>
+      <Censoring>Tilladt over 11 år</Censoring>
+      <Synopsis>- Under en bemandet mission til Mars formodes astronauten Mark Watney død efter en voldsom storm, og hans besætning efterlader ham på planeten. Men Watney overlever stormen og er nu strandet alene på en ugæstfri planet. Han har kun meget lidt forråd tilbage og må bruge sin snilde, sin forstand og masser af gejst for at overleve og finde en måde, hvorpå han kan sende signaler til jorden. Millioner af kilometer væk, arbejder NASA og et hold af internationale forskere utrætteligt på at bringe ”the Martian” hjem, alt imens hans besætning planlægger en risikabel, hvis ikke umulig, redningsmission. Som disse fortællinger om utroligt mod spreder sig, samles verden om håbet på, at Watney vender hjem i god behold.</Synopsis>
+      <Path>TheMartianDk.jpg</Path>
+      <LargePath>TheMartianDk.large.jpg</LargePath>
+      <HDPath>TheMartianDk.hd.jpg</HDPath>
+      <TrailerId>17644</TrailerId>
+      <LivePoster>TheMartian_CITAT_DK.mp4</LivePoster>
+      <Advertisement>TheMartianDk.adv.jpg</Advertisement>
+      <Genre>Science Fiction</Genre>
+      <Length Seconds="8460">02:21</Length>
+      <OpeningDate Date="151856">2015-10-08T00:00:00+02:00</OpeningDate>
+      <IMDb No="3659388" Id="3659388">tt3659388</IMDb>
+      <Dimension>3</Dimension>
+      <Pictures>
+        <Item>Martian.pic1.jpg</Item>
+        <Item>Martian.pic2.jpg</Item>
+        <Item>Martian.pic3.jpg</Item>
+      </Pictures>
+      <Actors>
+        <Item>Matt Damon</Item>
+        <Item>Kate Mara</Item>
+        <Item>Jessica Chastain</Item>
+        <Item>Kristen Wiig</Item>
+        <Item>Michael Pena</Item>
+      </Actors>
+      <Directors>
+        <Item>Ridley Scott</Item>
+      </Directors>
+    </Movie>
+  </Movies>
+  <MovieBases>
+    <MovieBase No="7">
+      <Name>The Martian</Name>
+    </MovieBase>
+    <MovieBase No="11">
+      <Name>Pan</Name>
+    </MovieBase>
+  </MovieBases>
+  <Events>
+    <Event No="835" DateNo="151882" SubjectNo="98" MovieNo="12341" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151882" Time="72000">2015-11-03T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="7260" Total="7260">02:01:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151882" Time="72000">2015-11-03T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151882" Time="72000">2015-11-03T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=835&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151882" Time="70200">2015-11-03T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=835&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="72" UseSeats="1" />
+    </Event>
+    <Event No="837" DateNo="151883" SubjectNo="74" MovieNo="12156" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151883" Time="72000">2015-11-04T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="7620" Total="7620">02:07:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151883" Time="72000">2015-11-04T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151883" Time="72000">2015-11-04T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=837&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151883" Time="70200">2015-11-04T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=837&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="76" UseSeats="1" />
+    </Event>
+    <Event No="839" DateNo="151884" SubjectNo="100" MovieNo="12118" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151884" Time="72000">2015-11-05T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="8100" Total="8100">02:15:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151884" Time="72000">2015-11-05T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151884" Time="72000">2015-11-05T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=839&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151884" Time="70200">2015-11-05T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=839&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="76" UseSeats="1" />
+    </Event>
+    <Event No="841" DateNo="151885" SubjectNo="100" MovieNo="12118" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151885" Time="72000">2015-11-06T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="8100" Total="8100">02:15:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151885" Time="72000">2015-11-06T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151885" Time="72000">2015-11-06T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=841&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151885" Time="70200">2015-11-06T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=841&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="843" DateNo="151886" SubjectNo="100" MovieNo="12118" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151886" Time="72000">2015-11-07T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="8100" Total="8100">02:15:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151886" Time="72000">2015-11-07T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151886" Time="72000">2015-11-07T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=843&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151886" Time="70200">2015-11-07T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=843&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="847" DateNo="151886" SubjectNo="101" MovieNo="12487" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151886" Time="57600">2015-11-07T16:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="6660" Total="6660">01:51:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151886" Time="57600">2015-11-07T16:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151886" Time="57600">2015-11-07T16:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=847&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151886" Time="55800">2015-11-07T15:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=847&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="845" DateNo="151887" SubjectNo="100" MovieNo="12118" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151887" Time="72000">2015-11-08T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="8100" Total="8100">02:15:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151887" Time="72000">2015-11-08T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151887" Time="72000">2015-11-08T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=845&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151887" Time="70200">2015-11-08T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=845&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="849" DateNo="151887" SubjectNo="101" MovieNo="12487" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151887" Time="57600">2015-11-08T16:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="6660" Total="6660">01:51:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151887" Time="57600">2015-11-08T16:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151887" Time="57600">2015-11-08T16:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=849&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151887" Time="55800">2015-11-08T15:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=849&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="851" DateNo="151888" SubjectNo="101" MovieNo="12487" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151888" Time="68400">2015-11-09T19:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="6660" Total="6660">01:51:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151888" Time="68400">2015-11-09T19:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151888" Time="68400">2015-11-09T19:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=851&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151888" Time="66600">2015-11-09T18:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=851&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="853" DateNo="151889" SubjectNo="101" MovieNo="12487" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151889" Time="68400">2015-11-10T19:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="6660" Total="6660">01:51:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151889" Time="68400">2015-11-10T19:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151889" Time="68400">2015-11-10T19:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=853&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151889" Time="66600">2015-11-10T18:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=853&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="857" DateNo="151890" SubjectNo="98" MovieNo="12341" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151890" Time="54000">2015-11-11T15:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="7260" Total="7260">02:01:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151890" Time="54000">2015-11-11T15:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151890" Time="54000">2015-11-11T15:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=857&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151890" Time="52200">2015-11-11T14:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=857&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="75" UseSeats="1" />
+    </Event>
+    <Event No="907" DateNo="151890" SubjectNo="111" MovieNo="12299" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151890" Time="68400">2015-11-11T19:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="7200" Total="7200">02:00:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151890" Time="68400">2015-11-11T19:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151890" Time="68400">2015-11-11T19:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=907&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151890" Time="66600">2015-11-11T18:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=907&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="76" UseSeats="1" />
+    </Event>
+    <Event No="855" DateNo="151891" SubjectNo="101" MovieNo="12487" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151891" Time="68400">2015-11-12T19:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="6660" Total="6660">01:51:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151891" Time="68400">2015-11-12T19:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151891" Time="68400">2015-11-12T19:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=855&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151891" Time="66600">2015-11-12T18:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=855&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="859" DateNo="151892" SubjectNo="102" MovieNo="12582" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151892" Time="72000">2015-11-13T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="5160" Total="5160">01:26:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151892" Time="72000">2015-11-13T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151892" Time="72000">2015-11-13T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=859&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151892" Time="70200">2015-11-13T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=859&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="861" DateNo="151893" SubjectNo="102" MovieNo="12582" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151893" Time="72000">2015-11-14T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="5160" Total="5160">01:26:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151893" Time="72000">2015-11-14T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151893" Time="72000">2015-11-14T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=861&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151893" Time="70200">2015-11-14T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=861&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="863" DateNo="151894" SubjectNo="102" MovieNo="12582" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151894" Time="72000">2015-11-15T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="5160" Total="5160">01:26:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151894" Time="72000">2015-11-15T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151894" Time="72000">2015-11-15T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=863&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151894" Time="70200">2015-11-15T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=863&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="865" DateNo="151894" SubjectNo="103" MovieNo="11854" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151894" Time="54000">2015-11-15T15:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="7800" Total="7800">02:10:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151894" Time="54000">2015-11-15T15:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151894" Time="54000">2015-11-15T15:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=865&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151894" Time="52200">2015-11-15T14:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=865&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter</Info>
+      <Seats FreeCount="73" UseSeats="1" />
+    </Event>
+    <Event No="867" DateNo="151895" SubjectNo="104" MovieNo="12641" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151895" Time="68400">2015-11-16T19:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="8460" Total="8460">02:21:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151895" Time="68400">2015-11-16T19:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151895" Time="68400">2015-11-16T19:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=867&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151895" Time="66600">2015-11-16T18:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=867&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="869" DateNo="151896" SubjectNo="104" MovieNo="12641" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151896" Time="72000">2015-11-17T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="8460" Total="8460">02:21:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151896" Time="72000">2015-11-17T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151896" Time="72000">2015-11-17T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=869&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151896" Time="70200">2015-11-17T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=869&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="871" DateNo="151897" SubjectNo="104" MovieNo="12641" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151897" Time="72000">2015-11-18T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="8460" Total="8460">02:21:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151897" Time="72000">2015-11-18T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151897" Time="72000">2015-11-18T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=871&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151897" Time="70200">2015-11-18T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=871&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="327" DateNo="151898" SubjectNo="34" MovieNo="0" OrganizerNo="201" LocationNo="3" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151898" Time="72000">2015-11-19T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="0" Total="0">00:00:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151898" Time="72000">2015-11-19T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151898" Time="72000">2015-11-19T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=327&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151898" Time="70200">2015-11-19T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=327&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="98" UseSeats="0" />
+    </Event>
+    <Event No="875" DateNo="151899" SubjectNo="105" MovieNo="11787" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151899" Time="72000">2015-11-20T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="8880" Total="8880">02:28:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151899" Time="72000">2015-11-20T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151899" Time="72000">2015-11-20T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=875&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151899" Time="70200">2015-11-20T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=875&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="76" UseSeats="1" />
+    </Event>
+    <Event No="877" DateNo="151900" SubjectNo="105" MovieNo="11787" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151900" Time="72000">2015-11-21T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="8880" Total="8880">02:28:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151900" Time="72000">2015-11-21T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151900" Time="72000">2015-11-21T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=877&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151900" Time="70200">2015-11-21T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=877&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="909" DateNo="151900" SubjectNo="111" MovieNo="12299" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151900" Time="57600">2015-11-21T16:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="7200" Total="7200">02:00:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151900" Time="57600">2015-11-21T16:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151900" Time="57600">2015-11-21T16:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=909&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151900" Time="55800">2015-11-21T15:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=909&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="76" UseSeats="1" />
+    </Event>
+    <Event No="885" DateNo="151901" SubjectNo="105" MovieNo="11787" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151901" Time="57600">2015-11-22T16:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="8880" Total="8880">02:28:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151901" Time="57600">2015-11-22T16:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151901" Time="57600">2015-11-22T16:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=885&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151901" Time="55800">2015-11-22T15:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=885&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="76" UseSeats="1" />
+    </Event>
+    <Event No="879" DateNo="151901" SubjectNo="105" MovieNo="11787" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151901" Time="72000">2015-11-22T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="8880" Total="8880">02:28:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151901" Time="72000">2015-11-22T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151901" Time="72000">2015-11-22T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=879&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151901" Time="70200">2015-11-22T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=879&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="881" DateNo="151902" SubjectNo="105" MovieNo="11787" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151902" Time="68400">2015-11-23T19:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="8880" Total="8880">02:28:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151902" Time="68400">2015-11-23T19:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151902" Time="68400">2015-11-23T19:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=881&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151902" Time="66600">2015-11-23T18:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=881&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="75" UseSeats="1" />
+    </Event>
+    <Event No="883" DateNo="151903" SubjectNo="105" MovieNo="11787" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151903" Time="72000">2015-11-24T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="8880" Total="8880">02:28:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151903" Time="72000">2015-11-24T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151903" Time="72000">2015-11-24T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=883&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151903" Time="70200">2015-11-24T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=883&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="911" DateNo="151904" SubjectNo="110" MovieNo="12300" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151904" Time="68400">2015-11-25T19:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="4500" Total="4500">01:15:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151904" Time="68400">2015-11-25T19:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151904" Time="68400">2015-11-25T19:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=911&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151904" Time="66600">2015-11-25T18:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=911&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="74" UseSeats="1" />
+    </Event>
+    <Event No="913" DateNo="151905" SubjectNo="106" MovieNo="12102" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151905" Time="54000">2015-11-26T15:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="6540" Total="6540">01:49:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151905" Time="54000">2015-11-26T15:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151905" Time="54000">2015-11-26T15:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=913&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151905" Time="52200">2015-11-26T14:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=913&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="77" UseSeats="1" />
+    </Event>
+    <Event No="887" DateNo="151905" SubjectNo="106" MovieNo="12102" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151905" Time="72000">2015-11-26T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="6540" Total="6540">01:49:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151905" Time="72000">2015-11-26T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151905" Time="72000">2015-11-26T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=887&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151905" Time="70200">2015-11-26T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=887&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="889" DateNo="151906" SubjectNo="106" MovieNo="12102" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151906" Time="72000">2015-11-27T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="6540" Total="6540">01:49:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151906" Time="72000">2015-11-27T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151906" Time="72000">2015-11-27T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=889&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151906" Time="70200">2015-11-27T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=889&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="901" DateNo="151906" SubjectNo="108" MovieNo="12640" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151906" Time="57600">2015-11-27T16:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="5460" Total="5460">01:31:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151906" Time="57600">2015-11-27T16:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151906" Time="57600">2015-11-27T16:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=901&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151906" Time="55800">2015-11-27T15:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=901&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="891" DateNo="151907" SubjectNo="106" MovieNo="12102" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151907" Time="72000">2015-11-28T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="6540" Total="6540">01:49:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151907" Time="72000">2015-11-28T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151907" Time="72000">2015-11-28T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=891&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151907" Time="70200">2015-11-28T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=891&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="903" DateNo="151907" SubjectNo="108" MovieNo="12640" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151907" Time="57600">2015-11-28T16:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="5460" Total="5460">01:31:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151907" Time="57600">2015-11-28T16:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151907" Time="57600">2015-11-28T16:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=903&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151907" Time="55800">2015-11-28T15:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=903&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="893" DateNo="151908" SubjectNo="106" MovieNo="12102" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151908" Time="57600">2015-11-29T16:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="6540" Total="6540">01:49:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151908" Time="57600">2015-11-29T16:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151908" Time="57600">2015-11-29T16:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=893&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151908" Time="55800">2015-11-29T15:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=893&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="915" DateNo="151908" SubjectNo="106" MovieNo="12102" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151908" Time="72000">2015-11-29T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="6540" Total="6540">01:49:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151908" Time="72000">2015-11-29T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151908" Time="72000">2015-11-29T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=915&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151908" Time="70200">2015-11-29T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=915&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="905" DateNo="151908" SubjectNo="108" MovieNo="12640" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151908" Time="46800">2015-11-29T13:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="5460" Total="5460">01:31:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151908" Time="46800">2015-11-29T13:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151908" Time="46800">2015-11-29T13:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=905&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151908" Time="45000">2015-11-29T12:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=905&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="895" DateNo="151909" SubjectNo="106" MovieNo="12102" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151909" Time="68400">2015-11-30T19:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="6540" Total="6540">01:49:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151909" Time="68400">2015-11-30T19:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151909" Time="68400">2015-11-30T19:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=895&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151909" Time="66600">2015-11-30T18:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=895&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="897" DateNo="151910" SubjectNo="106" MovieNo="12102" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151910" Time="72000">2015-12-01T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="6540" Total="6540">01:49:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151910" Time="72000">2015-12-01T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151910" Time="72000">2015-12-01T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=897&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151910" Time="70200">2015-12-01T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=897&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="899" DateNo="151911" SubjectNo="107" MovieNo="12590" OrganizerNo="201" LocationNo="1" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151911" Time="72000">2015-12-02T20:00:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="8400" Total="8400">02:20:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151911" Time="72000">2015-12-02T20:00:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151911" Time="72000">2015-12-02T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=899&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151911" Time="70200">2015-12-02T19:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=899&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>Der serveres en forfriskning i pausen. incl i pris. Pause ca 15 minutter
+</Info>
+      <Seats FreeCount="78" UseSeats="1" />
+    </Event>
+    <Event No="329" DateNo="151913" SubjectNo="35" MovieNo="0" OrganizerNo="201" LocationNo="3" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151913" Time="73800">2015-12-04T20:30:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="0" Total="0">00:00:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151913" Time="73800">2015-12-04T20:30:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151913" Time="73800">2015-12-04T20:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=329&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151913" Time="72000">2015-12-04T20:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=329&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="88" UseSeats="0" />
+    </Event>
+    <Event No="335" DateNo="151934" SubjectNo="36" MovieNo="0" OrganizerNo="201" LocationNo="5" EventTypeNo="0">
+      <Name />
+      <DateTime Date="151934" Time="77400">2015-12-25T21:30:00+01:00</DateTime>
+      <Duration AdvTrailer="0" MovieLength="0" Total="0">00:00:00</Duration>
+      <WebEnable Show="1" Buy="1" Res="1">
+        <Period>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151934" Time="77400">2015-12-25T21:30:00+01:00</End>
+        </Period>
+        <BuyPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151934" Time="77400">2015-12-25T21:30:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=335&catno=0&grpno=0&typno=-1&locno=0&buy=true]]></Link>
+        </BuyPeriod>
+        <ResPeriod>
+          <Start Date="0" Time="0">0001-01-01T00:00:00+01:00</Start>
+          <End Date="151934" Time="75600">2015-12-25T21:00:00+01:00</End>
+          <Link><![CDATA[http://var.ebillet.dk/bpw/den/listtt.asp?orgno=201&sysno=3&refno=335&catno=0&grpno=0&typno=-1&locno=0&buy=false]]></Link>
+        </ResPeriod>
+      </WebEnable>
+      <Info>
+      </Info>
+      <Seats FreeCount="72" UseSeats="0" />
+    </Event>
+  </Events>
+  <EventTypes>
+    <EventType No="0">
+      <Name>[ikke angivet]</Name>
+    </EventType>
+  </EventTypes>
+  <Subjects>
+    <Subject No="34" OrganizerNo="201" SystemNo="3" CategoryNo="4" MovieNo="0">
+      <Name>Sinne Eeg</Name>
+      <ShortInfo>Fremtrædende og fremadstormende jazzsangerinde</ShortInfo>
+      <Info>Sangerinden Sinne Eeg har gennem de seneste år markeret sig som en af de betydeligste jazzsangerinder i Europa med en rytmisk sikkerhed, en sikker harmonisk sans og en charmerende sceneoptræden, der inviterer publikum med. Stilen er moderne og nordisk i tonen, men med klare referencer til "de store" jazzsangerinder indenfor jazz- og swingtraditionen. Udover at have indtaget den hjemlige scene er Sinne Eeg ved at have godt fat i udlandet, hvor hun bl.a. jævnligt tournerer i lande som USA, Japan, Kina, Norge og Sverige. Især i Japan og USA er der store forventninger om kommende gennembrud efter flere succesfulde turnerer.
+
+Sinne Eeg er netop nu særdeles aktuel, dels som dette års modtager af den prestigefyldte Ben Webster Prisen, dels med en ny albumudgivelse, ’Face The Music’, der præsenterer et mere sprudlende og udadvendt repertoire end tidligere.
+Sinne Eeg er kendt for at være, om muligt, endnu bedre live end på cd og hendes koncerter er kendetegnet ved stort nærvær, humor og et enormt musikalsk overskud, som bl.a. kommer til udtryk ved, at der i den grad leges og tages chancer på scenen. 
+
+foto: Stephen Freiheit</Info>
+      <MovieID>
+      </MovieID>
+      <Path>org201ref34.jpg</Path>
+      <Length Seconds="9000">02:30</Length>
+    </Subject>
+    <Subject No="35" OrganizerNo="201" SystemNo="3" CategoryNo="4" MovieNo="0">
+      <Name>Peter Viskinde - Akustisk</Name>
+      <ShortInfo>Intim koncert med en af dansk Rocks store navne.</ShortInfo>
+      <Info>De akustiske koncerter er aldrig ens og der er altid plads til helt nye sangideer og sjældent spillede sange fra fortiden. Rygraden i koncerterne er dog i faste rammer og disse sange er et must:
+&lt;p&gt;
+ &lt;ul&gt;
+&lt;li&gt;Savner en som dig
+&lt;/li&gt;&lt;li&gt;No Peace Like In Heaven
+&lt;/li&gt;&lt;li&gt;Hele vejen hjem
+&lt;/li&gt;&lt;li&gt;Someone Like You
+&lt;/li&gt;&lt;li&gt;Animal
+&lt;/li&gt;&lt;li&gt;Werner Emil
+&lt;/li&gt;&lt;li&gt;I det sekund er jeg lykkelig
+&lt;/li&gt;&lt;li&gt;Luk mig ind
+&lt;/li&gt;&lt;li&gt;Speed Of The Sound Of Loneliness
+&lt;/li&gt;&lt;li&gt;Fight For Your Love
+&lt;/ul&gt;&lt;p&gt;
+Viskinde startede i 1979 i rock-gruppen Malurt sammen med bl.a. Michael Falch. I 1990 startede han bandet Big Fat Snake. Viskinde hentede bandnavnet fra Bob Dylan sangen "Wiggle Wiggle". Bandet brød igennem i 1995 med Viskinde's komposition "No Peace Like in Heaven" fra albummet ”Midnight Mission”. Viskinde har i de seneste 10 gjort sig gældende som kunstmaler med en lang række udstillinger i og udsmykningsopgaver.</Info>
+      <MovieID>
+      </MovieID>
+      <Path>org201ref35.jpg</Path>
+      <Length Seconds="9000">02:30</Length>
+    </Subject>
+    <Subject No="36" OrganizerNo="201" SystemNo="3" CategoryNo="4" MovieNo="0">
+      <Name>Julebal - med POPLic Service</Name>
+      <ShortInfo>Det årlig julebal </ShortInfo>
+      <Info>Så gør vi det igen.&lt;p&gt;
+Der er &lt;b&gt;Julefest&lt;/b&gt; i Kosmorama.&lt;p&gt;
+
+Vestjællands bedste party band, gi'r den fuld skrue.&lt;p&gt;
+Husk at købe billet i forsalg&lt;br&gt;
+-der bli'r udsolgt !!</Info>
+      <MovieID>
+      </MovieID>
+      <Path>org201ref36.png</Path>
+      <Length Seconds="14400">04:00</Length>
+    </Subject>
+    <Subject No="74" OrganizerNo="201" SystemNo="3" CategoryNo="2" MovieNo="12156">
+      <Name>Amy</Name>
+      <ShortInfo>
+      </ShortInfo>
+      <Info>
+      </Info>
+      <MovieID>
+      </MovieID>
+      <Path />
+      <Length Seconds="0">00:00</Length>
+    </Subject>
+    <Subject No="98" OrganizerNo="201" SystemNo="3" CategoryNo="2" MovieNo="12341">
+      <Name>Praktikanten</Name>
+      <ShortInfo>
+      </ShortInfo>
+      <Info>
+      </Info>
+      <MovieID>
+      </MovieID>
+      <Path />
+      <Length Seconds="0">00:00</Length>
+    </Subject>
+    <Subject No="100" OrganizerNo="201" SystemNo="3" CategoryNo="2" MovieNo="12118">
+      <Name>Den Franske Forbindelse</Name>
+      <ShortInfo>
+      </ShortInfo>
+      <Info>
+      </Info>
+      <MovieID>
+      </MovieID>
+      <Path />
+      <Length Seconds="0">00:00</Length>
+    </Subject>
+    <Subject No="101" OrganizerNo="201" SystemNo="3" CategoryNo="2" MovieNo="12487">
+      <Name>Pan 3D</Name>
+      <ShortInfo>
+      </ShortInfo>
+      <Info>
+      </Info>
+      <MovieID>
+      </MovieID>
+      <Path />
+      <Length Seconds="0">00:00</Length>
+    </Subject>
+    <Subject No="102" OrganizerNo="201" SystemNo="3" CategoryNo="2" MovieNo="12582">
+      <Name>Taxi Teheran</Name>
+      <ShortInfo>
+      </ShortInfo>
+      <Info>
+      </Info>
+      <MovieID>
+      </MovieID>
+      <Path />
+      <Length Seconds="0">00:00</Length>
+    </Subject>
+    <Subject No="103" OrganizerNo="201" SystemNo="3" CategoryNo="2" MovieNo="11854">
+      <Name>La Boheme - Sydney Opera House</Name>
+      <ShortInfo>
+      </ShortInfo>
+      <Info>
+      </Info>
+      <MovieID>
+      </MovieID>
+      <Path />
+      <Length Seconds="0">00:00</Length>
+    </Subject>
+    <Subject No="104" OrganizerNo="201" SystemNo="3" CategoryNo="2" MovieNo="12641">
+      <Name>The Martian - 3D</Name>
+      <ShortInfo>
+      </ShortInfo>
+      <Info>
+      </Info>
+      <MovieID>
+      </MovieID>
+      <Path />
+      <Length Seconds="0">00:00</Length>
+    </Subject>
+    <Subject No="105" OrganizerNo="201" SystemNo="3" CategoryNo="2" MovieNo="11787">
+      <Name>SPECTRE</Name>
+      <ShortInfo>
+      </ShortInfo>
+      <Info>
+      </Info>
+      <MovieID>
+      </MovieID>
+      <Path />
+      <Length Seconds="0">00:00</Length>
+    </Subject>
+    <Subject No="106" OrganizerNo="201" SystemNo="3" CategoryNo="2" MovieNo="12102">
+      <Name>Kvinden i Guld</Name>
+      <ShortInfo>
+      </ShortInfo>
+      <Info>
+      </Info>
+      <MovieID>
+      </MovieID>
+      <Path />
+      <Length Seconds="0">00:00</Length>
+    </Subject>
+    <Subject No="107" OrganizerNo="201" SystemNo="3" CategoryNo="2" MovieNo="12590">
+      <Name>Victoria</Name>
+      <ShortInfo>
+      </ShortInfo>
+      <Info>
+      </Info>
+      <MovieID>
+      </MovieID>
+      <Path />
+      <Length Seconds="0">00:00</Length>
+    </Subject>
+    <Subject No="108" OrganizerNo="201" SystemNo="3" CategoryNo="2" MovieNo="12640">
+      <Name>Emma og Julemanden</Name>
+      <ShortInfo>
+      </ShortInfo>
+      <Info>
+      </Info>
+      <MovieID>
+      </MovieID>
+      <Path />
+      <Length Seconds="0">00:00</Length>
+    </Subject>
+    <Subject No="110" OrganizerNo="201" SystemNo="3" CategoryNo="2" MovieNo="12300">
+      <Name>DOXBIO - Ejersbo</Name>
+      <ShortInfo>
+      </ShortInfo>
+      <Info>
+      </Info>
+      <MovieID>
+      </MovieID>
+      <Path />
+      <Length Seconds="0">00:00</Length>
+    </Subject>
+    <Subject No="111" OrganizerNo="201" SystemNo="3" CategoryNo="2" MovieNo="12299">
+      <Name>DOXBIO - Mand Falder</Name>
+      <ShortInfo>
+      </ShortInfo>
+      <Info>
+      </Info>
+      <MovieID>
+      </MovieID>
+      <Path />
+      <Length Seconds="0">00:00</Length>
+    </Subject>
+  </Subjects>
+  <Dates>
+    <Date No="151882" Day="3" Month="11" Year="2015">
+      <Long>03.11.2015</Long>
+      <DayOfWeek No="1">tirsdag</DayOfWeek>
+      <DateTime>2015-11-03T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151883" Day="4" Month="11" Year="2015">
+      <Long>04.11.2015</Long>
+      <DayOfWeek No="2">onsdag</DayOfWeek>
+      <DateTime>2015-11-04T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151884" Day="5" Month="11" Year="2015">
+      <Long>05.11.2015</Long>
+      <DayOfWeek No="3">torsdag</DayOfWeek>
+      <DateTime>2015-11-05T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151885" Day="6" Month="11" Year="2015">
+      <Long>06.11.2015</Long>
+      <DayOfWeek No="4">fredag</DayOfWeek>
+      <DateTime>2015-11-06T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151886" Day="7" Month="11" Year="2015">
+      <Long>07.11.2015</Long>
+      <DayOfWeek No="5">lørdag</DayOfWeek>
+      <DateTime>2015-11-07T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151887" Day="8" Month="11" Year="2015">
+      <Long>08.11.2015</Long>
+      <DayOfWeek No="6">søndag</DayOfWeek>
+      <DateTime>2015-11-08T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151888" Day="9" Month="11" Year="2015">
+      <Long>09.11.2015</Long>
+      <DayOfWeek No="0">mandag</DayOfWeek>
+      <DateTime>2015-11-09T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151889" Day="10" Month="11" Year="2015">
+      <Long>10.11.2015</Long>
+      <DayOfWeek No="1">tirsdag</DayOfWeek>
+      <DateTime>2015-11-10T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151890" Day="11" Month="11" Year="2015">
+      <Long>11.11.2015</Long>
+      <DayOfWeek No="2">onsdag</DayOfWeek>
+      <DateTime>2015-11-11T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151891" Day="12" Month="11" Year="2015">
+      <Long>12.11.2015</Long>
+      <DayOfWeek No="3">torsdag</DayOfWeek>
+      <DateTime>2015-11-12T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151892" Day="13" Month="11" Year="2015">
+      <Long>13.11.2015</Long>
+      <DayOfWeek No="4">fredag</DayOfWeek>
+      <DateTime>2015-11-13T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151893" Day="14" Month="11" Year="2015">
+      <Long>14.11.2015</Long>
+      <DayOfWeek No="5">lørdag</DayOfWeek>
+      <DateTime>2015-11-14T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151894" Day="15" Month="11" Year="2015">
+      <Long>15.11.2015</Long>
+      <DayOfWeek No="6">søndag</DayOfWeek>
+      <DateTime>2015-11-15T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151895" Day="16" Month="11" Year="2015">
+      <Long>16.11.2015</Long>
+      <DayOfWeek No="0">mandag</DayOfWeek>
+      <DateTime>2015-11-16T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151896" Day="17" Month="11" Year="2015">
+      <Long>17.11.2015</Long>
+      <DayOfWeek No="1">tirsdag</DayOfWeek>
+      <DateTime>2015-11-17T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151897" Day="18" Month="11" Year="2015">
+      <Long>18.11.2015</Long>
+      <DayOfWeek No="2">onsdag</DayOfWeek>
+      <DateTime>2015-11-18T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151898" Day="19" Month="11" Year="2015">
+      <Long>19.11.2015</Long>
+      <DayOfWeek No="3">torsdag</DayOfWeek>
+      <DateTime>2015-11-19T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151899" Day="20" Month="11" Year="2015">
+      <Long>20.11.2015</Long>
+      <DayOfWeek No="4">fredag</DayOfWeek>
+      <DateTime>2015-11-20T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151900" Day="21" Month="11" Year="2015">
+      <Long>21.11.2015</Long>
+      <DayOfWeek No="5">lørdag</DayOfWeek>
+      <DateTime>2015-11-21T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151901" Day="22" Month="11" Year="2015">
+      <Long>22.11.2015</Long>
+      <DayOfWeek No="6">søndag</DayOfWeek>
+      <DateTime>2015-11-22T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151902" Day="23" Month="11" Year="2015">
+      <Long>23.11.2015</Long>
+      <DayOfWeek No="0">mandag</DayOfWeek>
+      <DateTime>2015-11-23T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151903" Day="24" Month="11" Year="2015">
+      <Long>24.11.2015</Long>
+      <DayOfWeek No="1">tirsdag</DayOfWeek>
+      <DateTime>2015-11-24T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151904" Day="25" Month="11" Year="2015">
+      <Long>25.11.2015</Long>
+      <DayOfWeek No="2">onsdag</DayOfWeek>
+      <DateTime>2015-11-25T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151905" Day="26" Month="11" Year="2015">
+      <Long>26.11.2015</Long>
+      <DayOfWeek No="3">torsdag</DayOfWeek>
+      <DateTime>2015-11-26T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151906" Day="27" Month="11" Year="2015">
+      <Long>27.11.2015</Long>
+      <DayOfWeek No="4">fredag</DayOfWeek>
+      <DateTime>2015-11-27T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151907" Day="28" Month="11" Year="2015">
+      <Long>28.11.2015</Long>
+      <DayOfWeek No="5">lørdag</DayOfWeek>
+      <DateTime>2015-11-28T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151908" Day="29" Month="11" Year="2015">
+      <Long>29.11.2015</Long>
+      <DayOfWeek No="6">søndag</DayOfWeek>
+      <DateTime>2015-11-29T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151909" Day="30" Month="11" Year="2015">
+      <Long>30.11.2015</Long>
+      <DayOfWeek No="0">mandag</DayOfWeek>
+      <DateTime>2015-11-30T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151910" Day="1" Month="12" Year="2015">
+      <Long>01.12.2015</Long>
+      <DayOfWeek No="1">tirsdag</DayOfWeek>
+      <DateTime>2015-12-01T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151911" Day="2" Month="12" Year="2015">
+      <Long>02.12.2015</Long>
+      <DayOfWeek No="2">onsdag</DayOfWeek>
+      <DateTime>2015-12-02T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151913" Day="4" Month="12" Year="2015">
+      <Long>04.12.2015</Long>
+      <DayOfWeek No="4">fredag</DayOfWeek>
+      <DateTime>2015-12-04T00:00:00+01:00</DateTime>
+    </Date>
+    <Date No="151934" Day="25" Month="12" Year="2015">
+      <Long>25.12.2015</Long>
+      <DayOfWeek No="4">fredag</DayOfWeek>
+      <DateTime>2015-12-25T00:00:00+01:00</DateTime>
+    </Date>
+  </Dates>
+  <Preferences>
+    <Paths SystemNo="3" Default="http://www.secure.ebillet.dk/teamposters/">
+      <Path CategoryNo="2">http://ebillet.dk/poster/</Path>
+    </Paths>
+    <Paths SystemNo="4" Default="http://ebillet.dk/posters/billetpronet/" />
+    <LivePosterPath>http://ebillet.dk/liveposter/</LivePosterPath>
+    <AdvertisementPath>http://ebillet.dk/poster/advertisement/</AdvertisementPath>
+  </Preferences>
+</EventList>

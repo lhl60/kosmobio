@@ -42,7 +42,14 @@ Editor::inst( $db, 'vagtplan', 'idx' )
 		Field::inst( 'AA' )
 			->set( false ),
 		Field::inst( 'Ledige' )
-			->set( false )
+			->set( false ),
+                Field::inst( 'event_id' )
+			->set( false ),
+                Field::inst("ordinary")
+                ->set( false),
+                Field::inst("capacity")
+                ->set( false)
+
 	)
 	->process( $_POST )
 	->json();

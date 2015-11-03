@@ -111,6 +111,12 @@ class Query {
 	protected $_order = array();
 
 	/**
+	 * @var array
+	 * @internal
+	 */
+	protected $_noBind = array();
+
+	/**
 	 * @var int
 	 * @internal
 	 */
@@ -303,6 +309,8 @@ class Query {
 			}
 			else {
 				// String argument so split into pieces and add
+				// TODO - This limits the ability to use functions. Need to
+				// parse the string so it will split when not in a function
 				$fields = explode(",", $args[$i]);
 
 				for ( $j=0 ; $j<count($fields) ; $j++ ) {
@@ -453,9 +461,10 @@ class Query {
 	 *    must be set, or as an array of key/value pairs to be set.
 	 *  @param string          $val When $set is given as a simple string, $set is the field
 	 *    name and this is the field's value.
+	 *  @param boolean         $bind Should the value be bound or not
 	 *  @return self
 	 */
-	public function set ( $set, $val=null )
+	public function set ( $set, $val=null, $bind=true )
 	{
 		if ( $set === null ) {
 			return $this;
@@ -467,7 +476,13 @@ class Query {
 
 		foreach ($set as $key => $value) {
 			$this->_field[] = $key;
-			$this->bind( ':'.$key, $value );
+
+			if ( $bind ) {
+				$this->bind( ':'.$key, $value );
+			}
+			else {
+				$this->_noBind[$key] = $value;
+			}
 		}
 
 		return $this;
@@ -695,7 +710,14 @@ class Query {
 		$a = array();
 
 		for ( $i=0 ; $i<count($this->_field) ; $i++ ) {
-			$a[] = $this->_protect_identifiers( $this->_field[$i] ) .' = :'. $this->_safe_bind( $this->_field[$i] );
+			$field = $this->_field[$i];
+
+			if ( isset( $this->_noBind[ $field ] ) ) {
+				$a[] = $this->_protect_identifiers( $field ) .' = '. $this->_noBind[ $field ];
+			}
+			else {
+				$a[] = $this->_protect_identifiers( $field ) .' = :'. $this->_safe_bind( $field );
+			}
 		}
 
 		return ' '.implode(', ', $a).' ';

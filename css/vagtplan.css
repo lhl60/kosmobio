@@ -7,8 +7,19 @@ and open the template in the editor.
     Created on : Jun 22, 2015, 3:57:20 PM
     Author     : lars
 */
- 
 
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
+
+.green_strip
+{
+    background-color: #E5FFE5!important;
+}
 .alle_vagter_mangler
 {
  background-color: lightpink !important;   

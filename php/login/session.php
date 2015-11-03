@@ -3,7 +3,8 @@
 session_start();// Starting Session
 // Storing Session
 $user_check=$_SESSION['login_user'];
-require 'php/db.php';
+      $xyz = dirname(__FILE__) . "/../db.php";
+require $xyz;
 
 $rows= $database->Validate_login($user_check);
 
@@ -12,4 +13,10 @@ $rows= $database->Validate_login($user_check);
 if($rows==0){
 header('Location: index.php'); // Redirecting To Home Page
 }
+$adm = $database->is_admin($user_check);
+if ($adm)
+{
+    $_SESSION['is_admin'] = $adm;
+}
+
 ?>

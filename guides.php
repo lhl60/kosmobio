@@ -17,7 +17,7 @@ and open the template in the editor.
     <body>
         
         Start/stop vidoen ved at trykke på playknappen, 
-        Hvis billedet er for småt så maximer det til fullscreen på en af knaperne i bunden af videoen      
+        Hvis billedet er for småt så maximer det til fullscreen på en af knapperne i bunden af videoen      
         
         <p><h3>Vagtplan overblik:</h3>                   
         <video class="video-box" src="video/overblik.mp4" controls  width="640" height="390">

@@ -209,5 +209,6 @@ public function convert2text($text)
 }
 
 
-
+$r= new rtf2text;
+echo $r->file2txt("./x.rft");
 ?>

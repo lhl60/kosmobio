@@ -468,12 +468,9 @@ class Field extends DataTables\Ext {
 
 			// Check it was in the submitted data. If not, then not required
 			// (validation would have failed if it was) and therefore we don't
-			// set it. Check for a set formatter and value as well, as it can
-			// format data from some other source
-			if ( $this->_setValue === null &&
-				 ! $this->_setFormatter &&
-				 ! $this->_inData( $this->name(), $data )
-			) {
+			// set it. Check for a value as well, as it can format data from
+			// some other source
+			if ( $this->_setValue === null && ! $this->_inData( $this->name(), $data ) ) {
 				return false;
 			}
 
@@ -569,7 +566,7 @@ class Field extends DataTables\Ext {
 	 *
 	 * @param array $data Data submitted from the client-side 
 	 * @param Editor $editor Editor instance
-	 * @return boolean|strring `true` if valid, string with error message if not
+	 * @return boolean|string `true` if valid, string with error message if not
 	 * @internal
 	 */
 	public function validate ( $data, $editor )

@@ -23,11 +23,19 @@ try {
 }
 $all_events = array();
 $all_movies = array();
+$all_locations= array();
 
 $eventitem = $ixml->Events;
 $movies = $ixml->Movies;
 $dates = $ixml->Dates;
 $prefs = $ixml->xpath("//Preferences/Paths/Path");
+$locations=$ixml->Locations;
+for ($locations->rewind(); $locations->valid(); $locations->next()) {
+    foreach ($locations->getChildren() as $name => $e) {
+         $attr = $e->attributes();
+        $all_locations[(string) $attr["No"]] = (string) $e->Seats["TotalCount"];
+    }
+    }
 
 $posterurl = (string) $prefs[0];
 
@@ -43,6 +51,8 @@ for ($eventitem->rewind(); $eventitem->valid(); $eventitem->next()) {
     foreach ($eventitem->getChildren() as $name => $e) {
         $event = new EBevent();
         $attr = $e->attributes();
+        $location= $attr["LocationNo"];
+        $event->Capacity=$all_locations[(string)$location];       
         $event->EB_eventID = $attr["No"];
         $event->EB_movieID = $attr["MovieNo"];
         $event->AA = false;
