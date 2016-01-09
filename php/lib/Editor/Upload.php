@@ -135,7 +135,7 @@ class Upload extends DataTables\Ext {
 
 	/**
 	 * Upload instance constructor
-	 * @param string|closure $action Action to take on upload - this is applied
+	 * @param string|callable $action Action to take on upload - this is applied
 	 *     directly to {@link action}.
 	 */
 	function __construct( $action=null )
@@ -165,7 +165,7 @@ class Upload extends DataTables\Ext {
 	 *   typically involve writing it to the file system so it can be used
 	 *   later.
 	 * 
-	 * @param  string|closure $action Action to take - see description above.
+	 * @param  string|callable $action Action to take - see description above.
 	 * @return self Current instance, used for chaining
 	 */
 	public function action ( $action )
@@ -230,7 +230,7 @@ class Upload extends DataTables\Ext {
 	 * Set a callback function that is used to remove files which no longer have
 	 * a reference in a source table.
 	 *
-	 * @param  function $callback Function that will be executed on clean. It is
+	 * @param  callable $callback Function that will be executed on clean. It is
 	 *     given an array of information from the database about the orphaned
 	 *     rows, and can return true to indicate that the rows should be
 	 *     removed from the database. Any other return value (including none)
@@ -250,7 +250,7 @@ class Upload extends DataTables\Ext {
 	 * added by calling this method multiple times - they will be executed in
 	 * sequence when a file has been uploaded.
 	 *
-	 * @param  function $fn Validation function. A PHP `$_FILES` parameter is
+	 * @param  callable $fn Validation function. A PHP `$_FILES` parameter is
 	 *     passed in for the uploaded file and the return is either a string
 	 *     (validation failed and error message), or `null` (validation passed).
 	 * @return self Current instance, used for chaining
@@ -271,7 +271,7 @@ class Upload extends DataTables\Ext {
 	/**
 	 * Get database information data from the table
 	 *
-	 * @param [Database] $db Database
+	 * @param \DataTables\Database $db Database
 	 * @return array Database information
 	 * @internal
 	 */
@@ -294,7 +294,7 @@ class Upload extends DataTables\Ext {
 		}
 
 		$result = $q->exec()->fetchAll();
-		$out = [];
+		$out = array();
 
 		for ( $i=0, $ien=count($result) ; $i<$ien ; $i++ ) {
 			$out[ $result[$i][ $this->_dbPKey ] ] = $result[$i];
@@ -306,7 +306,7 @@ class Upload extends DataTables\Ext {
 
 	/**
 	 * Clean the database
-	 * @param  Editor $editor Calling Editor instance
+	 * @param  \DataTables\Editor $editor Calling Editor instance
 	 * @param  Field $field   Host field
 	 * @internal
 	 */
@@ -334,7 +334,7 @@ class Upload extends DataTables\Ext {
 	/**
 	 * Execute an upload
 	 *
-	 * @param  Editor $editor Calling Editor instance
+	 * @param  \DataTables\Editor $editor Calling Editor instance
 	 * @return int Primary key value
 	 * @internal
 	 */
@@ -463,7 +463,7 @@ class Upload extends DataTables\Ext {
 	 * orphaned rows and then calling the callback function. The callback can
 	 * then instruct the rows to be removed through the return value.
 	 *
-	 * @param  Database $db Database instance
+	 * @param  \DataTables\Database $db Database instance
 	 * @param  string $editorTable Editor Editor instance table name
 	 * @param  string $fieldName   Host field's name
 	 */
@@ -472,7 +472,7 @@ class Upload extends DataTables\Ext {
 		$callback = $this->_dbCleanCallback;
 
 		if ( ! $this->_dbTable || ! $callback ) {
-			return false;
+			return;
 		}
 
 		$a = explode('.', $fieldName);
@@ -530,7 +530,7 @@ class Upload extends DataTables\Ext {
 	/**
 	 * Add a record to the database for a newly uploaded file
 	 *
-	 * @param  Database $db Database instance
+	 * @param  \DataTables\Database $db Database instance
 	 * @return int Primary key value for the newly uploaded file
 	 */
 	private function _dbExec ( $db )

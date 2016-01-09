@@ -26,7 +26,7 @@ class Ext {
 	 * and then chained - which otherwise isn't available until PHP 5.4.
 	 * If using PHP 5.4 or later, simply create a 'new' instance of the
 	 * target class and chain methods as normal.
-	 *  @return Instantiated class
+	 *  @return \DataTables\Editor|\DataTables\Editor\Field|\DataTables\Editor\Join|\DataTables\Editor\Upload Instantiated class
 	 *  @static
 	 */
 	public static function instantiate ()
@@ -41,7 +41,7 @@ class Ext {
 	 *
 	 * This method performs exactly the same actions as the 'instantiate'
 	 * static method, but is simply shorter and easier to type!
-	 *  @return Instantiated class
+	 *  @return \DataTables\Editor|\DataTables\Editor\Field|\DataTables\Editor\Join|\DataTables\Editor\Upload class
 	 *  @static
 	 */
 	public static function inst ()
@@ -63,7 +63,6 @@ class Ext {
 	 *    to the $prop array.
 	 *  @return self|* Class instance if setting (allowing chaining), or
 	 *    the value requested if getting.
-	 *  @internal
 	 */
 	protected function _getSet( &$prop, $val, $array=false )
 	{

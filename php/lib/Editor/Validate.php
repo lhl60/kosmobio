@@ -121,7 +121,10 @@ class Validate {
 	 * This is retained for backwards compatibility, but the validation options
 	 * are now the recommended way of indicating that a field is required.
 	 *
-	 *  @internal
+	 * @internal
+	 * @param string $name Function name
+	 * @param array $arguments Function arguments
+	 * @return mixed|string
 	 */
 	public static function __callStatic( $name, $arguments ) {
 		if ( preg_match( '/_required$/', $name ) ) {
@@ -249,12 +252,13 @@ class Validate {
 	 *   "empty" => false
 	 * );
 	 * ```
-	 * 
-	 *  @param string $val The value to check for validity
-	 *  @param string[] $data The full data set submitted
-	 *  @param array $opts Validation options. No additional options are
+	 *
+	 * @param string $val The value to check for validity
+	 * @param string[] $data The full data set submitted
+	 * @param array $opts Validation options. No additional options are
 	 *    available or required for this validation method.
-	 *  @return string|true true if the value is valid, a string with an error
+	 * @param array $host Host information
+	 * @return string|true true if the value is valid, a string with an error
 	 *    message otherwise.
 	 */
 	static function basic( $val, $data, $opts, $host ) {
@@ -285,6 +289,7 @@ class Validate {
 	 *  @param string[] $data The full data set submitted
 	 *  @param array $opts Validation options. No additional options are
 	 *    available or required for this validation method.
+	 * @param array $host Host information
 	 *  @return string|true true if the value is valid, a string with an error
 	 *    message otherwise.
 	 */
@@ -316,6 +321,7 @@ class Validate {
 	 *  @param string[] $data The full data set submitted
 	 *  @param array $opts Validation options. No additional options are
 	 *    available or required for this validation method.
+	 *  @param array $host Host information
 	 *  @return string|true true if the value is valid, a string with an error
 	 *    message otherwise.
 	 */
@@ -342,6 +348,7 @@ class Validate {
 	 *  @param string[] $data The full data set submitted
 	 *  @param array $opts Validation options. No additional options are
 	 *    available or required for this validation method.
+	 *  @param array $host Host information
 	 *  @return string|true true if the value is valid, a string with an error
 	 *    message otherwise.
 	 */
@@ -374,6 +381,7 @@ class Validate {
 	 *  @param string[] $data The full data set submitted
 	 *  @param array $opts Validation options. No additional options are
 	 *    available or required for this validation method.
+	 *  @param array $host Host information
 	 *  @return string|true true if the value is valid, a string with an error
 	 *    message otherwise.
 	 */
@@ -401,6 +409,7 @@ class Validate {
 	 *    `min` is available for this method to indicate the minimum value. If
 	 *    only the default validation options are required, this parameter can
 	 *    be given as an integer value, which will be used as the minimum value.
+	 *  @param array $host Host information
 	 *  @return string|true true if the value is valid, a string with an error
 	 *    message otherwise.
 	 */
@@ -430,6 +439,7 @@ class Validate {
 	 *    `max` is available for this method to indicate the maximum value. If
 	 *    only the default validation options are required, this parameter can
 	 *    be given as an integer value, which will be used as the maximum value.
+	 *  @param array $host Host information
 	 *  @return string|true true if the value is valid, a string with an error
 	 *    message otherwise.
 	 */
@@ -460,6 +470,7 @@ class Validate {
 	 *  @param int|array $opts Validation options. The additional options of
 	 *    `min` and `max` are available for this method to indicate the minimum
 	 *    and maximum values, respectively.
+	 *  @param array $host Host information
 	 *  @return string|true true if the value is valid, a string with an error
 	 *    message otherwise.
 	 */
@@ -490,6 +501,7 @@ class Validate {
 	 *  @param string[] $data The full data set submitted
 	 *  @param array $opts Validation options. No additional options are
 	 *    available or required for this validation method.
+	 *  @param array $host Host information
 	 *  @return string|true true if the value is valid, a string with an error
 	 *    message otherwise.
 	 */
@@ -519,6 +531,7 @@ class Validate {
 	 *    length. If only the default validation options are required, this
 	 *    parameter can be given as an integer value, which will be used as the
 	 *    minimum string length.
+	 *  @param array $host Host information
 	 *  @return string|true true if the value is valid, a string with an error
 	 *    message otherwise.
 	 */
@@ -549,6 +562,7 @@ class Validate {
 	 *    length. If only the default validation options are required, this
 	 *    parameter can be given as an integer value, which will be used as the
 	 *    maximum string length.
+	 *  @param array $host Host information
 	 *  @return string|true true if the value is valid, a string with an error
 	 *    message otherwise.
 	 */
@@ -576,6 +590,7 @@ class Validate {
 	 *  @param int|array $opts Validation options. The additional options of
 	 *    `min` and `max` are available for this method to indicate the minimum
 	 *    and maximum string lengths, respectively.
+	 *  @param array $host Host information
 	 *  @return string|true true if the value is valid, a string with an error
 	 *    message otherwise.
 	 */
@@ -596,6 +611,7 @@ class Validate {
 	 *  @param string[] $data The full data set submitted
 	 *  @param array $opts Validation options. No additional options are
 	 *    available or required for this validation method.
+	 *  @param array $host Host information
 	 *  @return string|true true if the value is valid, a string with an error
 	 *    message otherwise.
 	 */
@@ -622,6 +638,7 @@ class Validate {
 	 *  @param string[] $data The full data set submitted
 	 *  @param array $opts Validation options. No additional options are
 	 *    available or required for this validation method.
+	 *  @param array $host Host information
 	 *  @return string|true true if the value is valid, a string with an error
 	 *    message otherwise.
 	 */
@@ -655,6 +672,7 @@ class Validate {
 	 *    format to check the validity of. If given as an array, then the
 	 *    date format is in the 'format' parameter, and the return error
 	 *    message in the 'message' parameter.
+	 *  @param array $host Host information
 	 *  @return string|true true if the value is valid, a string with an error
 	 *    message otherwise.
 	 */
@@ -690,6 +708,7 @@ class Validate {
 	 *    `column` - the column to check this value against as value, are also
 	 *    available. These options are not required and if not given are
 	 *    automatically derived from the Editor and Field instances.
+	 *  @param array $host Host information
 	 *  @return string|true true if the value is valid, a string with an error
 	 *    message otherwise.
 	 */

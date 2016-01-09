@@ -222,14 +222,15 @@ class Join extends DataTables\Ext {
 	 *    an array should be used, with the first element being the pkey's name
 	 *    in the child table, and the second element being the key's name in the
 	 *    link table.
-	 *  @param {string} $table Join table name, if using a link table
+	 *  @param string $table Join table name, if using a link table
+	 *  @returns Join This for chaining
 	 *  @deprecated 1.5 Please use the {@link link} method rather than this
 	 *      method now.
 	 */
 	public function join ( $parent=null, $child=null, $table=null )
 	{
 		if ( $parent === null && $child === null ) {
-			return $this->_join();
+			return $this->_join;
 		}
 
 		$this->_join['parent'] = $parent;
@@ -256,6 +257,7 @@ class Join extends DataTables\Ext {
 	 * @param  string $field1 Table and field name
 	 * @param  string $field2 Table and field name
 	 * @return self Name
+	 * @throws \Exception Link limitations
 	 */
 	public function link ( $field1, $field2 )
 	{
@@ -350,7 +352,7 @@ class Join extends DataTables\Ext {
 	 * * Simple case: `where( field, value, operator )`
 	 * * Complex: `where( fn )`
 	 *
-	 * @param string|function  $key   Single field name or a closure function
+	 *  @param string|callable $key   Single field name or a closure function
 	 *  @param string|string[] $value Single field value, or an array of values.
 	 *  @param string          $op    Condition operator: <, >, = etc
 	 *  @return string[]|self Where condition array, or self if used as a setter.
@@ -692,7 +694,7 @@ class Join extends DataTables\Ext {
 	
 	/**
 	 * Add local WHERE condition to query
-	 *  @param Query $query Query instance to apply the WHERE conditions to
+	 *  @param \DataTables\Database\Query $query Query instance to apply the WHERE conditions to
 	 *  @private
 	 */
 	private function _apply_where ( $query )
@@ -714,7 +716,7 @@ class Join extends DataTables\Ext {
 
 	/**
 	 * Create a row.
-	 *  @param Database $db Database reference to use
+	 *  @param \DataTables\Database $db Database reference to use
 	 *  @param int $parentId Parent row's primary key value
 	 *  @param string[] $data Data to be set for the join
 	 *  @private
@@ -815,7 +817,7 @@ class Join extends DataTables\Ext {
 
 	/**
 	 * Update a row.
-	 *  @param Database $db Database reference to use
+	 *  @param \DataTables\Database $db Database reference to use
 	 *  @param int $parentId Parent row's primary key value
 	 *  @param string[] $data Data to be set for the join
 	 *  @private
@@ -872,6 +874,7 @@ class Join extends DataTables\Ext {
 	 * Create an SQL string from the fields that this instance knows about for
 	 * using in queries
 	 *  @param string $direction Direction: 'get' or 'set'.
+	 *  @returns array Fields to include
 	 *  @private
 	 */
 	private function _fields ( $direction )

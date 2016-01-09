@@ -80,8 +80,8 @@ class db
                 $ret = $q->execute();
             }
         }
-        $moveID = $e->EB_movieID;
-        if (is_null($moveID))
+        $movieID = $e->EB_movieID;
+        if (is_null($movieID))
         {
             $moveID=0;
         }
@@ -155,6 +155,20 @@ catch(PDOException $e) {
               echo $e->getMessage();
             }            
        
+    }
+
+    public function add_info($movie)
+    {
+        $stmt = "insert into filminfo (createdate, titel, MovieNo)" .
+                " VALUES  ( now(),:titel,:movieno)" .
+                "ON DUPLICATE KEY UPDATE" .
+                 " titel=VALUES(titel)," .
+                " MovieNo=VALUES(MovieNo)";
+
+        $q = $this->dbh->prepare($stmt);
+        $q->bindParam(":titel", $movie->Title);
+        $q->bindParam(":movieno", $movie->EB_movieNo);
+        $ret = $q->execute(); 
     }
 
     public function Log($comment)

@@ -5,7 +5,7 @@
  * PHP libraries for DataTables and DataTables Editor, utilising PHP 5.3+.
  *
  *  @author    SpryMedia
- *  @version   1.5.1
+ *  @version   1.5.2
  *  @copyright 2012 SpryMedia ( http://sprymedia.co.uk )
  *  @license   http://editor.datatables.net/license DataTables Editor
  *  @link      http://editor.datatables.net
@@ -144,7 +144,7 @@ class Editor extends Ext {
 	 */
 
 	/** @var string */
-	public $version = '1.5.1';
+	public $version = '1.5.2';
 
 
 
@@ -249,6 +249,7 @@ class Editor extends Ext {
 	 *        of fields.
 	 *  @return Field|Field[]|Editor The selected field, an array of fields, or
 	 *      the Editor instance for chaining, depending on the input parameter.
+	 *  @throws \Exception Unkown field error
 	 *  @see {@link Field} for field documentation.
 	 */
 	public function field ( $_=null )
@@ -260,7 +261,7 @@ class Editor extends Ext {
 				}
 			}
 
-			throw 'Unknown field: '.$_;
+			throw new \Exception('Unknown field: '.$_);
 		}
 
 		if ( $_ !== null && !is_array($_) ) {
@@ -369,9 +370,10 @@ class Editor extends Ext {
 	 * This is basically the same as {@link json} but wraps the return in a
 	 * JSONP callback.
 	 *
-	 *  @param string $callback The callback function name to use. If not given
+	 * @param string $callback The callback function name to use. If not given
 	 *    or `null`, then `$_GET['callback']` is used (the jQuery default).
 	 * @return self Self for chaining.
+	 * @throws \Exception JSONP function name validation
 	 */
 	public function jsonp ( $callback=null )
 	{
@@ -564,6 +566,18 @@ class Editor extends Ext {
 			}
 			else {
 				/* Create or edit row */
+				// Pre events so they can occur before the validation
+				foreach ($data['data'] as $id => $values) {
+					if ( $data['action'] == 'create' ) {
+						$this->_trigger( 'preCreate', $values );
+					}
+					else {
+						$id = str_replace( $this->_idPrefix, '', $id );
+						$this->_trigger( 'preEdit', $id, $values );
+					}
+				}
+
+				// Validation
 				$valid = $this->validate( $this->_out['fieldErrors'], $data );
 
 				// Global validation - if you want global validation - do it here
@@ -640,7 +654,9 @@ class Editor extends Ext {
 		foreach( $data['data'] as $id => $values ) {
 			for ( $i=0 ; $i<count($this->_fields) ; $i++ ) {
 				$field = $this->_fields[$i];
-				$validation = $field->validate( $values, $this );
+				$validation = $field->validate( $values, $this,
+					str_replace( $this->idPrefix(), '', $id )
+				);
 
 				if ( $validation !== true ) {
 					$errors[] = array(
@@ -680,7 +696,7 @@ class Editor extends Ext {
 	 * undefined (since Editor expects the row to still be available, but the
 	 * condition removes it from the result set).
 	 * 
-	 * @param string|function $key   Single field name or a closure function
+	 * @param string|callable $key   Single field name or a closure function
 	 * @param string          $value Single field value.
 	 * @param string          $op    Condition operator: <, >, = etc
 	 * @return string[]|self Where condition array, or self if used as a setter.
@@ -731,10 +747,13 @@ class Editor extends Ext {
 	 * Get an array of objects from the database to be given to DataTables as a
 	 * result of an sAjaxSource request, such that DataTables can display the information
 	 * from the DB in the table.
+	 *
 	 *  @param integer $id Primary key value to get an individual row (after create or
 	 *    update operations). Gets the full set if not given.
 	 *  @param array $http HTTP parameters from GET or POST request (so we can service
 	 *    server-side processing requests from DataTables).
+	 *  @return array DataTables get information
+	 *  @throws \Exception Error on SQL execution
 	 *  @private
 	 */
 	private function _get( $id=null, $http=null )
@@ -811,8 +830,6 @@ class Editor extends Ext {
 	 */
 	private function _insert( $values )
 	{
-		$this->_trigger( 'preCreate', $values );
-
 		// Insert the new row
 		$id = $this->_insert_or_update( null, $values );
 
@@ -842,12 +859,12 @@ class Editor extends Ext {
 	/**
 	 * Update a row in the database
 	 *  @param string $id The DOM ID for the row that is being edited.
+	 *  @return array Row's data
 	 *  @private
 	 */
 	private function _update( $id, $values )
 	{
 		$id = str_replace( $this->_idPrefix, '', $id );
-		$this->_trigger( 'preEdit', $id, $values );
 
 		// Update or insert the rows for the parent table and the left joined
 		// tables
@@ -941,12 +958,15 @@ class Editor extends Ext {
 
 	/**
 	 * File upload
+	 *  @param array $data Upload data
+	 *  @throws \Exception File upload name error
 	 *  @private
 	 */
 	private function _upload( $data )
 	{
 		// Search for upload field in local fields
 		$field = $this->_find_field( $data['uploadField'], 'name' );
+		$fieldName = '';
 
 		if ( ! $field ) {
 			// Perhaps it is in a join instance
@@ -978,7 +998,7 @@ class Editor extends Ext {
 			throw new \Exception("File uploaded to a field that does not have upload options configured");
 		}
 
-		$res = $upload->exec( $this, $field );
+		$res = $upload->exec( $this );
 
 		if ( $res === false ) {
 			$this->_out['fieldErrors'][] = array(
@@ -1023,7 +1043,7 @@ class Editor extends Ext {
 	/**
 	 * Common file get method for any array of fields
 	 * @param  array &$files File output array
-	 * @param  array $fields Fields to get file information about
+	 * @param  Field[] $fields Fields to get file information about
 	 * @param  string $limitTable Limit the data gathering to a single table
 	 *     only
 	 * @private
@@ -1088,14 +1108,13 @@ class Editor extends Ext {
 	 * When server-side processing is being used, modify the query with // the
      * required extra conditions
 	 *
-	 *  @param Query $query Query instance to apply the SSP commands to
+	 *  @param \DataTables\Database\Query $query Query instance to apply the SSP commands to
+	 *  @param array $http Parameters from HTTP request
 	 *  @return array Server-side processing information array
 	 *  @private
 	 */
 	private function _ssp_query ( $query, $http )
 	{
-		$ssp = array();
-		
 		if ( ! isset( $http['draw'] ) ) {
 			return array();
 		}
@@ -1140,6 +1159,7 @@ class Editor extends Ext {
 	 *  @param array $http HTTP variables (i.e. GET or POST)
 	 *  @param int $index Index in the DataTables' submitted data
 	 *  @returns string DB field name
+	 *  @throws \Exception Unknown fields
 	 *  @private
 	 */
 	public function _ssp_field( $http, $index )
@@ -1162,7 +1182,7 @@ class Editor extends Ext {
 
 	/**
 	 * Sorting requirements to a server-side processing query.
-	 *  @param Query $query Query instance to apply sorting to
+	 *  @param \DataTables\Database\Query $query Query instance to apply sorting to
 	 *  @param array $http HTTP variables (i.e. GET or POST)
 	 *  @private
 	 */
@@ -1182,7 +1202,7 @@ class Editor extends Ext {
 	/**
 	 * Add DataTables' 'where' condition to a server-side processing query. This
 	 * works for both global and individual column filtering.
-	 *  @param Query $query Query instance to apply the WHERE conditions to
+	 *  @param \DataTables\Database\Query $query Query instance to apply the WHERE conditions to
 	 *  @param array $http HTTP variables (i.e. GET or POST)
 	 *  @private
 	 */
@@ -1246,7 +1266,7 @@ class Editor extends Ext {
 
 	/**
 	 * Add a limit / offset to a server-side processing query
-	 *  @param Query $query Query instance to apply the offset / limit to
+	 *  @param \DataTables\Database\Query $query Query instance to apply the offset / limit to
 	 *  @param array $http HTTP variables (i.e. GET or POST)
 	 *  @private
 	 */
@@ -1267,7 +1287,7 @@ class Editor extends Ext {
 	/**
 	 * Add left join commands for the instance to a query.
 	 *
-	 *  @param Query $query Query instance to apply the joins to
+	 *  @param \DataTables\Database\Query $query Query instance to apply the joins to
 	 *  @private
 	 */
 	private function _perform_left_join ( $query )
@@ -1284,7 +1304,7 @@ class Editor extends Ext {
 
 	/**
 	 * Add local WHERE condition to query
-	 *  @param Query $query Query instance to apply the WHERE conditions to
+	 *  @param \DataTables\Database\Query $query Query instance to apply the WHERE conditions to
 	 *  @private
 	 */
 	private function _get_where ( $query )
@@ -1335,7 +1355,7 @@ class Editor extends Ext {
 	 *  @param int $id ID to use to condition the update. If null is given, the
 	 *      first query performed is an insert and the inserted id used as the
 	 *      value should there be any subsequent tables to operate on.
-	 *  @return Database.Result Result from the query or null if no query
+	 *  @return \DataTables\Database\Result Result from the query or null if no query
 	 *      performed.
 	 *  @private
 	 */
@@ -1418,8 +1438,9 @@ class Editor extends Ext {
 	 *
 	 *  @param string $table Database table name to use (can include an alias)
 	 *  @param array $where Update condition
-	 *  @return Database.Result Result from the query or null if no query
+	 *  @return \DataTables\Database\Result Result from the query or null if no query
 	 *      performed.
+	 *  @throws \Exception Where set error
 	 *  @private
 	 */
 	private function _insert_or_update_table ( $table, $values, $where=null )
@@ -1578,6 +1599,7 @@ class Editor extends Ext {
 	 *
 	 *  @param string $name SQL field
 	 *  @param string $type Which part to get: `alias` (default) or `orig`.
+	 *  @returns string Alias
 	 *  @private
 	 */
 	private function _alias ( $name, $type='alias' )
@@ -1600,6 +1622,7 @@ class Editor extends Ext {
 	 *  @param string $name SQL field
 	 *  @param string $type Which part to get: `table` (default) or `db` or
 	 *      `column`
+	 *  @return string Part name
 	 *  @private
 	 */
 	private function _part ( $name, $type='table' )

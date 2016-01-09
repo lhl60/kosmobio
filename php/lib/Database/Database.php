@@ -184,29 +184,24 @@ class Database {
 
 
 	/**
-	 * Execute an raw SQL query - i.e. give the method your own SQL, rather
-	 * than having the Database classes building it for you.
+	 * Create a `Query` object that will execute a custom SQL query. This is
+	 * similar to the `sql` method, but in this case you must call the `exec()`
+	 * method of the returned `Query` object manually. This can be useful if you
+	 * wish to bind parameters using the query `bind` method to ensure data is
+	 * properly escaped.
 	 *
-	 * This method will execute the given SQL immediately. Use the `raw()`
-	 * method if you need the ability to add bound parameters.
-	 *  @param string $sql SQL string to execute (only if _type is 'raw').
 	 *  @return Result
 	 *
 	 *  @example
-	 *    Basic select
+	 *    Safely escape user input
 	 *    <code>
-	 *    $result = $db->sql( 'SELECT * FROM myTable;' );
-	 *    </code>
-	 *
-	 *  @example
-	 *    Set the character set of the connection
-	 *    <code>
-	 *    $db->sql("SET character_set_client=utf8");
-	 *    $db->sql("SET character_set_connection=utf8");
-	 *    $db->sql("SET character_set_results=utf8");
+	 *    $db
+	 *      ->raw()
+	 *      ->bind( ':date', $_POST['date'] )
+	 *      ->exec( 'SELECT * FROM staff where date < :date' );
 	 *    </code>
 	 */
-	public function raw ( $sql )
+	public function raw ()
 	{
 		return $this->query( 'raw' );
 	}

@@ -23,6 +23,7 @@ include('php/login/session.php');
         <li> Medlems listen</li>
         <li> <a href="operator_log.php">Operatør log</a></li>
          <li> Operatør vejledninger</li>
+         <li> <a href="filminfo.php"> Film info</a>&nbsp;&nbsp;<strong>NY</strong> til operatører</li>
     </ul>
     
     </body>

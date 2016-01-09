@@ -154,7 +154,7 @@ class Query {
 
 	/**
 	 * Commit a transaction.
-	 *  @param * $dbh The Database handle (typically a PDO object, but not always).
+	 *  @param \PDO $dbh The Database handle (typically a PDO object, but not always).
 	 */
 	public static function commit ( $dbh )
 	{
@@ -177,7 +177,7 @@ class Query {
 
 	/**
 	 * Start a database transaction
-	 *  @param * $dbh The Database handle (typically a PDO object, but not always).
+	 *  @param \PDO $dbh The Database handle (typically a PDO object, but not always).
 	 */
 	public static function transaction ( $dbh )
 	{
@@ -187,7 +187,7 @@ class Query {
 
 	/**
 	 * Rollback the database state to the start of the transaction.
-	 *  @param * $dbh The Database handle (typically a PDO object, but not always).
+	 *  @param \PDO $dbh The Database handle (typically a PDO object, but not always).
 	 */
 	public static function rollback ( $dbh )
 	{
@@ -325,7 +325,7 @@ class Query {
 
 	/**
 	 * Perform a JOIN operation
-	 *  @param sting  $table     Table name to do the JOIN on
+	 *  @param string $table     Table name to do the JOIN on
 	 *  @param string $condition JOIN condition
 	 *  @param string $type      JOIN type
 	 *  @return self
@@ -494,7 +494,7 @@ class Query {
 	 *
 	 * Can be used in two different ways, as where( field, value ) or as an array of
 	 * conditions to use: where( array('fieldName', ...), array('value', ...) );
-	 *  @param string|string[]|function $key   Single field name, or an array of field names.
+	 *  @param string|string[]|callable $key   Single field name, or an array of field names.
 	 *    If given as a function (i.e. a closure), the function is called, passing the
 	 *    query itself in as the only parameter, so the function can add extra conditions
 	 *    with parentheses around the additional parameters.
@@ -549,7 +549,7 @@ class Query {
 	 *
 	 * Can be used in two different ways, as where( field, value ) or as an array of
 	 * conditions to use: where( array('fieldName', ...), array('value', ...) );
-	 *  @param string|string[]|function $key   Single field name, or an array of field names.
+	 *  @param string|string[]|callable $key   Single field name, or an array of field names.
 	 *    If given as a function (i.e. a closure), the function is called, passing the
 	 *    query itself in as the only parameter, so the function can add extra conditions
 	 *    with parentheses around the additional parameters.
@@ -571,7 +571,7 @@ class Query {
 	 *
 	 * Can be used in two different ways, as where( field, value ) or as an array of
 	 * conditions to use: where( array('fieldName', ...), array('value', ...) );
-	 *  @param string|string[]|function $key   Single field name, or an array of field names.
+	 *  @param string|string[]|callable $key   Single field name, or an array of field names.
 	 *    If given as a function (i.e. a closure), the function is called, passing the
 	 *    query itself in as the only parameter, so the function can add extra conditions
 	 *    with parentheses around the additional parameters.
@@ -632,8 +632,9 @@ class Query {
 
 	/**
 	 * Create a comma separated field list
-	 *  @return string
-	 *  @internal
+	 * @param bool $addAlias Flag to add an alias
+	 * @return string
+	 * @internal
 	 */
 	protected function _build_field( $addAlias=false )
 	{
@@ -842,8 +843,9 @@ class Query {
 
 	/**
 	 * Protect field names
-	 *  @return string
-	 *  @internal
+	 * @param string $identifier String to be protected
+	 * @return string
+	 * @internal
 	 */
 	protected function _protect_identifiers( $identifier )
 	{
@@ -892,8 +894,9 @@ class Query {
 	 * The characters that can be used for the PDO bindValue name are quite
 	 * limited (`[a-zA-Z0-9_]+`). We need to abstract this out to allow slightly
 	 * more complex expressions including dots for easy aliasing
-	 *  @return string
-	 *  @internal
+	 * @param string $name Field name
+	 * @return string
+	 * @internal
 	 */
 	protected function _safe_bind ( $name )
 	{
@@ -942,7 +945,12 @@ class Query {
 
 	/**
 	 * Add an individual where condition to the query.
-	 *  @internal
+	 * @internal
+	 * @param $where
+	 * @param null $value
+	 * @param string $type
+	 * @param string $op
+	 * @param bool $bind
 	 */
 	protected function _where ( $where, $value=null, $type='AND ', $op="=", $bind=true )
 	{

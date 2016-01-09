@@ -104,7 +104,11 @@ foreach ($all_events as $e) {
 }
 
 
-// now take a look in old filmbase to se if anybody signed up for duty
+// now add movies to the film_info db
+
+foreach ($all_movies as $m) {
+    $database->add_info($m);
+}
 
 
 
