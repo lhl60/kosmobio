@@ -47,6 +47,7 @@ class db
 
     public function add_event($e, $movie)
     {
+        echo "Add event";
         require_once './movie.php';
 
         require_once './event.php';
@@ -133,7 +134,7 @@ class db
                 " movieNo=VALUES(movieNo)," .
                 " poster=VALUES(poster)," .
                 " capacity=VALUES(capacity)";
-        
+        echo "Dato : $dato tid: $tid , Title : $Title Ledige= $e->FreeSeats<br>";
         $q = $this->dbh->prepare($stmt);
         $q->bindParam(":event_id", $e->EB_eventID);
         $q->bindParam(":Dato", $dato);
@@ -146,7 +147,6 @@ class db
         $q->bindParam(":movieNo", $movieID);
         $q->bindParam(":Date", $e->DateTime);
         $q->bindParam(":capa", $e->Capacity);
-
         $ret = $q->execute(); 
     }
 catch(PDOException $e) {
