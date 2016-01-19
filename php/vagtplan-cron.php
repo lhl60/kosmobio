@@ -12,15 +12,21 @@ ini_set('display_errors', 1);
 
 $ret = setlocale(LC_COLLATE, "dk_DK");
 
-$EB_file = "http://www.ebillet.dk/system/export.asmx/GetEvents?nStartDate=0&nStartTime=0&nEndDate=0&nEndTime=0&nSystemNo=3&nOrgNo=201&nWebMovieNo=0";
-
+//$EB_file = "http://www.ebillet.dk/system/export.asmx/GetEvents?nStartDate=0&nStartTime=0&nEndDate=0&nEndTime=0&nSystemNo=3&nOrgNo=201&nWebMovieNo=0";
+$EB_file= "http://remote.lhlarsen.dk/eb.php";
 try {
     //$str = file_get_contents($EB_file);
     $ixml =  new SimpleXMLIterator(file_get_contents($EB_file));
+    //$ixml =  new SimpleXMLIterator($EB_file);
     //var_dump($ixml);
 } catch (Exception $e) {
+    
     echo "exception ". $e->getMessage();
+    return;
 }
+
+//echo $str;
+//var_dump($ixml);
 $all_events = array();
 $all_movies = array();
 $all_locations= array();
@@ -45,6 +51,8 @@ $posterurl = (string) $prefs[0];
 
 
 
+//echo "evnetItem: $ixml->Events<br>";
+//var_dump($eventitem);
 
 
 for ($eventitem->rewind(); $eventitem->valid(); $eventitem->next()) {
@@ -100,6 +108,7 @@ for ($movies->rewind(); $movies->valid(); $movies->next()) {
 
 
 foreach ($all_events as $e) {
+    echo "call add event";
     $database->add_event($e, $all_movies[(string) $e->EB_movieID]);
 }
 
