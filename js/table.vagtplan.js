@@ -17,6 +17,10 @@ var dialog, form;
 var VPtable = 0;
 var slet_non_event_dialog;
 var slet_event_dialog;
+
+
+
+
 $.fn.dataTable.ext.search.push(function (settings, searchData) {
     if (!_monthsSearch) {
         return true;
@@ -59,6 +63,10 @@ function add_year_to_selectlist(y)
             value: y,
             text: y
         }));
+        if (y ==_yearsearch)
+        {
+            $("#yearselect").val(y);
+        }
     }
 }
 
@@ -182,6 +190,9 @@ function start_page_reloadtimer()
             "fnInitComplete": function (oSettings, json) {
                 init_context_menu();
             },
+//            "fnDrawCallback": function( oSettings ) {
+//                    scroll_today_into_view();
+//              },
             "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull)
             {
                 $(nRow.cells[0]).removeClass("alle_vagter_mangler");
@@ -444,7 +455,8 @@ function start_page_reloadtimer()
         var d = new Date();
         _monthsSearch = mlist[d.getMonth()];
         _yearsearch = d.getFullYear();
-
+        
+        
         for (var i = 0; i < mlist.length; i++) {
             var m = mlist[i];
             if (m !== _monthsSearch)
@@ -464,6 +476,7 @@ function start_page_reloadtimer()
         }
 
         $("#searchbar").append(months);
+
 
 
         $("#yearselect").change(function () {
@@ -500,8 +513,22 @@ function start_page_reloadtimer()
 
 
         });
+        
 
     });
+//    function scroll_today_into_view()
+//{
+//
+//    var pos = $("tr.dato_present").offset();
+//    var top = pos.top - 20;
+//    var left = pos.left - 20;
+//    $('html, body').animate({
+//    scrollTop: pos.top,
+//    scrollLeft: pos.left
+//});
+  //  }
+   // window.scrollTo((left < 0 ? 0 : left), (top < 0 ? 0 : top));
+//}
 }(jQuery));
 
 
