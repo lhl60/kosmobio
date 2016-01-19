@@ -7,6 +7,16 @@
 var editor;
 var filminfotable;
 var help_dialog;
+/**
+ * Get a random integer between `min` and `max`.
+ * 
+ * @param {number} min - min number
+ * @param {number} max - max number
+ * @return {int} a random integer
+ */
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 function hover_over_daterow(row)
 {
     var i = $(row).index() - 1; // my index-1 = my tuple 
@@ -164,6 +174,7 @@ function hover_over_daterow(row)
             editor.message("Opret kun film som IKKE bliver sat til salg i BilletPro, ");
             editor.enable('titel');
             editor.buttons(true);
+            editor.set("MovieNo",getRandomInt(8000,12000));
         });
 
         editor.on('onInitEdit', function (e) {
@@ -174,11 +185,11 @@ function hover_over_daterow(row)
 
         });
 
-        $('#filminfo').on('mouseover', 'td.hovershow', function(){
-                   
-                    hover_over_daterow(this);
-        }
-        );
+//        $('#filminfo').on('mouseover', 'td.hovershow', function(){
+//                   
+//                    hover_over_daterow(this);
+//        }
+//        );
 
 
 
