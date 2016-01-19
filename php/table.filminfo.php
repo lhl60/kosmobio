@@ -21,7 +21,7 @@ use
 // Build our Editor instance and process the data coming from _POST
 Editor::inst( $db, 'filminfo', 'idx' )
 	->fields(
-		Field::inst( 'titel' ),
+		Field::inst( 'titel' )->validator( 'Validate::notEmpty' ),
 		Field::inst( 'MovieNo' ),
 		Field::inst( 'DCP_loaded_date' )
 			->validator( 'Validate::dateFormat', array( 'format'=>'d-m-y' ) )
