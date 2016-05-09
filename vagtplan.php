@@ -114,6 +114,8 @@ include('php/login/session.php');
                             <option>Operatørmøde</option>
                             <option>Stormøde</option>
                             <option>Særforestilling</option>
+                            <option>Generalforsamling</option>
+
                         </select><p>
                         <label for='tid'>KL</label>
                         <input required id='tidh' min="00" value="20" max="24" type="number">:
