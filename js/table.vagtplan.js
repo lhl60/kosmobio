@@ -11,7 +11,7 @@ var _yearsearch = "";
 var AA_only = false;
 var weekday = ["Søndag", "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag"];
 var reloadtimer = 0;
-var refresh_interval = 10000;
+var refresh_interval = 30000;
 var timedout = false;
 var dialog, form;
 var VPtable = 0;
@@ -283,17 +283,24 @@ function start_page_reloadtimer()
             "scrollCollapse": true,
             "aoColumnDefs": [
                 {"sTitle": "Date", "aTargets": [0], "data": "Date", "sType": "date", "iDataSort": 0, "bSortable": false, "visible": false,
-                    "render": function (data, type, full, meta)
-                    {
-                        var t = data.split(/[- :]/);
-
-                        var d = new Date(t[0], t[1] - 1, t[2], t[3], t[4], t[5]);
-                        return d;
-                    }
+//                    "render": function (data, type, full, meta)
+//                    {
+////                        var t = data.split(/[- :]/);
+////
+////                        var d = new Date(t[0], t[1] - 1, t[2], t[3], t[4], t[5]);
+//
+//                         var x = moment(data);
+//                        return x.toString();
+//                    }
                 },
                 {"sTitle": "ugedag", "aTargets": [1], "data": 'ugedag', "bSortable": false,
                     "render": function (data, type, full, meta)
                     {
+                        if (full.ugedag !=null)
+                        {
+                            return full.ugedag;
+                        }
+                                            
                         var x = new Date(full.Dato);
                         return weekday[x.getDay()];
                     }
@@ -301,9 +308,15 @@ function start_page_reloadtimer()
                 {"sTitle": "Dato", "aTargets": [2], "bSortable": false,
                     "render": function (data, type, full, meta)
                     {
-                        var options = {day: "2-digit", month: "2-digit"};
-                        var x = new Date(full.Dato);
-                        return x.toLocaleDateString('da-DK', options);
+                        var x = moment(full.Dato);
+                        var d = x.date();
+                        var m = x.month()+1;
+                        d = (d<10) ? "0"+d: d;
+                        m = (m<9) ? "0"+m: m;
+                        return d + "/" + m;
+//                        var options = {day: "2-digit", month: "2-digit"};
+//                        var x = new Date(full.Dato);
+//                        return x.toLocaleDateString('da-DK', options);
                     }
                 },
                 {"sTitle": "Tid", "aTargets": [3], "data": "Tid", "bSortable": false},
