@@ -12,16 +12,28 @@ ini_set('display_errors', 1);
 
 $ret = setlocale(LC_COLLATE, "dk_DK");
 
-//$EB_file = "http://www.ebillet.dk/system/export.asmx/GetEvents?nStartDate=0&nStartTime=0&nEndDate=0&nEndTime=0&nSystemNo=3&nOrgNo=201&nWebMovieNo=0";
-$EB_file= "http://remote.lhlarsen.dk/eb.php";
+#$EB_file = "http://www.ebillet.dk/system/export.asmx/GetEvents?nStartDate=0&nStartTime=0&nEndDate=0&nEndTime=0&nSystemNo=3&nOrgNo=201&nWebMovieNo=0";
+#$EB_file= "http://remote.lhlarsen.dk:8081/eb.php";
+$url = 'http://remote.lhlarsen.dk/eb.php';
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_URL, $url);
+//curl_setopt($curl, CURLOPT_PORT, 8081); 
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($curl, CURLOPT_HEADER, false);
+$data = curl_exec($curl);
+
+
+
 try {
     //$str = file_get_contents($EB_file);
-    $ixml =  new SimpleXMLIterator(file_get_contents($EB_file));
+    #$ixml =  new SimpleXMLIterator(file_get_contents($EB_file));
+    $ixml =  new SimpleXMLIterator($data);
     //$ixml =  new SimpleXMLIterator($EB_file);
     //var_dump($ixml);
 } catch (Exception $e) {
     
     echo "exception ". $e->getMessage();
+    http_response_code(500);
     return;
 }
 
@@ -119,9 +131,14 @@ foreach ($all_movies as $m) {
     $database->add_info($m);
 }
 
+echo "OK events (". count($all_events) . ") movies:(".count($all_movies).")" ;
 
+if ( count($all_events) == 0 || count($all_movies) ==0)
+{
+    http_response_code(500);
+    return;
+}
 
-echo "OK";
 
 function add_subject_no($SubjectNo, $ixml) {
     $query = "//Subjects/Subject[@No=" . (int) $SubjectNo . "]";
