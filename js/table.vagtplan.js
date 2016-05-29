@@ -283,15 +283,14 @@ function start_page_reloadtimer()
             "scrollCollapse": true,
             "aoColumnDefs": [
                 {"sTitle": "Date", "aTargets": [0], "data": "Date", "sType": "date", "iDataSort": 0, "bSortable": false, "visible": false,
-//                    "render": function (data, type, full, meta)
-//                    {
-////                        var t = data.split(/[- :]/);
-////
-////                        var d = new Date(t[0], t[1] - 1, t[2], t[3], t[4], t[5]);
-//
-//                         var x = moment(data);
-//                        return x.toString();
-//                    }
+                    "render": function (data, type, full, meta)
+                    {
+                        var t = data.split(/[- :]/);
+
+                        var d = new Date(t[0], t[1] - 1, t[2], t[3], t[4], t[5]);
+                         var x = moment(data);
+                        return x.toString();
+                    }
                 },
                 {"sTitle": "ugedag", "aTargets": [1], "data": 'ugedag', "bSortable": false,
                     "render": function (data, type, full, meta)
